@@ -1,0 +1,11 @@
+[
+  {
+    "id": "extra-oil",
+    "name": "Extra oil",
+    "aliases": ["Oil", "Ghee"],
+    "defaultUnit": "tsp",
+    "perPortion": { "kcal": 45, "protein": 0, "carbs": 0, "fat": 5 },
+    "servingUnits": [{ "unit": "tbsp", "factor": 3 }],
+    "sourced": true
+  }
+]

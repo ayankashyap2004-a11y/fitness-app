@@ -4,11 +4,14 @@ import { registerSW } from 'virtual:pwa-register'
 import App from './App'
 import { db } from './db/schema'
 import { ensureAppMeta } from './db/persist'
+import { seedLibrary } from './db/seed'
 import './index.css'
 
 registerSW({ immediate: true })
 
-ensureAppMeta(db).catch((err: unknown) => console.error('Storage setup failed', err))
+ensureAppMeta(db)
+  .then(() => seedLibrary(db))
+  .catch((err: unknown) => console.error('Storage setup failed', err))
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

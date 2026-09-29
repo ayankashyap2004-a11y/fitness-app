@@ -1,10 +1,10 @@
 // Entity types for the on-device database (PRD §6).
 // Dates are local ISO strings: 'YYYY-MM-DD' for days, full ISO for timestamps.
 
+import type { MealSlot } from '../engine/food'
 import type { ActivityLevel, Goal, Intensity, Macros, Sex } from '../engine/types'
 
-export type { ActivityLevel, Goal, Intensity, Macros, Sex }
-export type MealSlot = 'breakfast' | 'lunch' | 'snacks' | 'dinner' | 'dessert'
+export type { ActivityLevel, Goal, Intensity, Macros, MealSlot, Sex }
 export type TrainingMode = 'gym' | 'home'
 export type PhotoAngle = 'front' | 'side' | 'back'
 export type CardioType = 'walk' | 'run' | 'cycle' | 'swim' | 'sport' | 'other'
@@ -63,6 +63,10 @@ export interface FoodItem {
   defaultUnit?: string
   servingUnits: AltUnit[]
   slots?: MealSlot[]
+  /** Mess dishes: appearances on the seed menus, used for ranking. */
+  timesOnMenu?: number
+  /** Non-mess foods: values checked against a published source. */
+  sourced?: boolean
   offBarcode?: string
   lastQty?: number
   lastUnit?: string
@@ -175,7 +179,8 @@ export interface AppMeta {
   splitPointer: number
   weeksSinceDeload: number
   deloadSkips: number
-  seedVersion?: number
+  /** Hash of the seed JSON last loaded. */
+  seedVersion?: string
   persistRequested: boolean
   persistGranted?: boolean
   firstLaunchAt: string

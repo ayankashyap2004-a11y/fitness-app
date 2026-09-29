@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useDayLog, useFoodLibrary, usePinned, useRecentInSlot, useToday } from '../../db/hooks'
+import { useDayLog, useFoodLibrary, useMenuDay, usePinned, useRecentInSlot, useToday } from '../../db/hooks'
 import { OIL_FOOD_ID } from '../../db/food'
 import type { FoodLogEntry } from '../../db/types'
 import { addDays } from '../../engine/dates'
@@ -7,11 +7,16 @@ import { MEAL_SLOTS, slotForTime, sumMacros, type FoodView, type MealSlot } from
 import { searchFoods } from '../../engine/search'
 import { AddFoodSheet } from './AddFoodSheet'
 import { FoodRow } from './FoodRow'
+import { NewDishSheet } from './NewDishSheet'
 import { SLOT_LABELS } from './slots'
 import { SlotLog } from './SlotLog'
 import { UsualBreakfastSheet } from './UsualBreakfastSheet'
 
-type Sheet = { kind: 'add'; foodId: string } | { kind: 'edit'; entry: FoodLogEntry } | { kind: 'breakfast' }
+type Sheet =
+  | { kind: 'add'; foodId: string }
+  | { kind: 'edit'; entry: FoodLogEntry }
+  | { kind: 'breakfast' }
+  | { kind: 'new'; name: string }
 
 const SUGGESTION_LIMIT = 12
 
@@ -29,14 +34,16 @@ export function FoodScreen() {
   const log = useDayLog(date)
   const pinned = usePinned()
   const recent = useRecentInSlot(slot, today)
+  const menu = useMenuDay(date)
 
   const suggestions = useMemo(() => {
-    if (!library || !pinned || !recent) return null
+    if (!library || !pinned || !recent || !menu) return null
+    const menuFoods = (menu[slot] ?? []).map((id) => library.byId.get(id)).filter((f): f is FoodView => !!f)
     const pinnedFoods = pinned
       .filter((p) => p.slot === slot || p.slot === 'any')
       .map((p) => library.byId.get(p.foodId))
       .filter((f): f is FoodView => !!f)
-    const seen = new Set([...pinnedFoods.map((f) => f.id), OIL_FOOD_ID])
+    const seen = new Set([...menuFoods.map((f) => f.id), ...pinnedFoods.map((f) => f.id), OIL_FOOD_ID])
     const recentFoods = recent
       .map((id) => library.byId.get(id))
       .filter((f): f is FoodView => !!f && !seen.has(f.id))
@@ -46,15 +53,17 @@ export function FoodScreen() {
       .filter((f) => f.source === 'mess' && f.slots.includes(slot) && f.timesOnMenu > 0 && !seen.has(f.id))
       .sort((a, b) => b.timesOnMenu - a.timesOnMenu || a.name.localeCompare(b.name))
       .slice(0, SUGGESTION_LIMIT)
-    return { pinnedFoods, recentFoods, common }
-  }, [library, pinned, recent, slot])
+    return { menuFoods, pinnedFoods, recentFoods, common }
+  }, [library, pinned, recent, menu, slot])
 
-  if (!library || !log || !pinned || !suggestions) return null
+  if (!library || !log || !pinned || !menu || !suggestions) return null
 
   const results = query.trim() ? searchFoods(library.foods, query) : null
   const bySlot = (s: MealSlot) => log.filter((e) => e.mealSlot === s)
   const dayTotal = sumMacros(log.map((e) => e.macros))
-  const suggestedMessId = recent?.find((id) => library.byId.get(id)?.source === 'mess' && !pinned.some((p) => p.foodId === id))
+  const menuBreakfastIds = menu.breakfast ?? []
+  const suggestedMessId =
+    menuBreakfastIds[0] ?? recent?.find((id) => library.byId.get(id)?.source === 'mess' && !pinned.some((p) => p.foodId === id))
 
   const open = (food: FoodView) => setSheet({ kind: 'add', foodId: food.id })
   const sheetFood =
@@ -107,21 +116,9 @@ export function FoodScreen() {
         })}
       </div>
 
-      <SlotLog date={date} slot={slot} entries={bySlot(slot)} library={library} onEdit={(entry) => setSheet({ kind: 'edit', entry })} />
-
-      {slot === 'breakfast' && (
-        <button
-          type="button"
-          onClick={() => setSheet({ kind: 'breakfast' })}
-          className="min-h-14 w-full rounded-2xl bg-accent font-semibold text-surface active:opacity-80"
-        >
-          Usual breakfast
-        </button>
-      )}
-
       <input
         type="search"
-        placeholder="Search dishes, e.g. dal, paneer"
+        placeholder="Search what you ate, e.g. dal, paneer"
         aria-label="Search food"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -129,18 +126,37 @@ export function FoodScreen() {
       />
 
       {results ? (
-        results.length > 0 ? (
-          <FoodList foods={results} onPick={open} />
-        ) : (
-          <p className="px-1 text-sm text-muted">No match for "{query.trim()}". Packaged foods arrive in Phase 5.</p>
-        )
+        <>
+          {results.length > 0 ? (
+            <FoodList foods={results} onPick={open} />
+          ) : (
+            <p className="px-1 text-sm text-muted">Nothing called "{query.trim()}" yet.</p>
+          )}
+          <AddNewButton label={`Add "${query.trim()}" as a new dish`} onClick={() => setSheet({ kind: 'new', name: query })} />
+        </>
       ) : (
         <>
+          <SlotLog date={date} slot={slot} entries={bySlot(slot)} library={library} onEdit={(entry) => setSheet({ kind: 'edit', entry })} />
+
+          {slot === 'breakfast' && (
+            <button
+              type="button"
+              onClick={() => setSheet({ kind: 'breakfast' })}
+              className="min-h-14 w-full rounded-2xl bg-accent font-semibold text-surface active:opacity-80"
+            >
+              Usual breakfast
+            </button>
+          )}
+
+          {suggestions.menuFoods.length > 0 && (
+            <FoodList title={`On the menu · ${SLOT_LABELS[slot].toLowerCase()}`} foods={suggestions.menuFoods} onPick={open} />
+          )}
           {suggestions.pinnedFoods.length > 0 && <FoodList title="Pinned" foods={suggestions.pinnedFoods} onPick={open} />}
           {suggestions.recentFoods.length > 0 && <FoodList title="Recent" foods={suggestions.recentFoods} onPick={open} />}
           {suggestions.common.length > 0 && (
             <FoodList title={`Common at ${SLOT_LABELS[slot].toLowerCase()}`} foods={suggestions.common} onPick={open} />
           )}
+          <AddNewButton label="Add a new dish" onClick={() => setSheet({ kind: 'new', name: '' })} />
         </>
       )}
 
@@ -150,10 +166,19 @@ export function FoodScreen() {
           library={library}
           pinned={pinned}
           suggestedMessId={suggestedMessId}
+          menuIds={menuBreakfastIds}
           onClose={() => setSheet(null)}
         />
       )}
-      {sheet && sheet.kind !== 'breakfast' && sheetFood && (
+      {sheet?.kind === 'new' && (
+        <NewDishSheet
+          initialName={sheet.name}
+          slot={slot}
+          onReady={(foodId) => setSheet({ kind: 'add', foodId })}
+          onClose={() => setSheet(null)}
+        />
+      )}
+      {(sheet?.kind === 'add' || sheet?.kind === 'edit') && sheetFood && (
         <AddFoodSheet
           key={sheet.kind === 'edit' ? `e${sheet.entry.id}` : `a${sheet.foodId}`}
           food={sheetFood}
@@ -166,6 +191,19 @@ export function FoodScreen() {
         />
       )}
     </section>
+  )
+}
+
+function AddNewButton({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex min-h-12 w-full items-center gap-2 rounded-2xl border border-dashed border-line px-4 text-left text-accent active:bg-line/50"
+    >
+      <span className="text-xl leading-none">+</span>
+      <span className="min-w-0 truncate">{label}</span>
+    </button>
   )
 }
 

@@ -29,6 +29,7 @@ A single-user fitness PWA for Ayan (Android, Chrome). It covers calorie and macr
 - **Never add workout or cardio calories to the target.** The activity factor already covers them.
 - **No progression suggestions.** Show last session's numbers only; the user decides.
 - **Quantities:** every food entry uses a 0.5-step stepper, can switch between multiple units, and stays editable after saving.
+- **Logging is manual first.** Never require a menu import or photo; the app must be fully usable by searching and adding dishes by hand.
 - **Mess dish macros** come from `data/archetypes.json`; each dish in `data/mess-dishes.json` points to one via `archetypeId`. A dish `override` beats its archetype, and a user edit beats both. Match menu imports on `name` + `aliases`, case-insensitive. `altUnits[].factor` scales the default portion (e.g. ladle = 0.5 katori).
 - **Volume counting:** fractional sets, where a direct set counts as 1 and a set for a helper muscle counts as 0.5.
 - **Deloads:** every 6 completed training weeks, at half the planned sets, with a Skip button.
@@ -49,7 +50,7 @@ Keep `engine/` free of React and Dexie so it stays unit-testable.
 1. **Scaffold:** Vite + TS + Tailwind + PWA manifest, bottom tab navigation, Dexie schema, storage persistence.
 2. **Engine and onboarding:** `engine/` functions with Vitest tests, an onboarding flow, and targets shown on the Today screen.
 3. **Food logging:** load `data/archetypes.json` and `data/mess-dishes.json` into Dexie on first run, search, quantity stepper, meal slots, pinned items, the Usual breakfast sheet, and the oil button.
-4. **Mess menu import:** a JSON import (format in PRD §4.3), today's dishes first, and unmatched dishes flagged for an archetype pick.
+4. **Manual dish entry + optional menu import:** logging is primarily manual: search and pick, or add a new dish (like an archetype, or with its own values). The weekly JSON menu import (format in PRD §4.3) is optional and lives in Settings; if a menu exists, its dishes show first and unmatched names get an alias/archetype pick.
 5. **Open Food Facts:** search, cache results locally, and support whey entered manually from the tub label.
 6. **Workout:** seed the exercise library and split, gym/home toggle, set logging with last-time display, rest timer, and rotation pointer.
 7. **Deloads, cardio, weekly volume view.**

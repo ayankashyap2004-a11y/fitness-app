@@ -4,6 +4,7 @@ import { useTargets, useToday } from '../../db/hooks'
 import { db } from '../../db/schema'
 import { ACTIVITY_CHOICES, GOAL_CHOICES } from '../onboarding/options'
 import { EggSplitSettings } from './EggSplitSettings'
+import { MenuSettings } from './MenuSettings'
 import { ProfileEditor } from './ProfileEditor'
 
 export function SettingsScreen() {
@@ -59,6 +60,8 @@ export function SettingsScreen() {
       </div>
 
       <EggSplitSettings />
+
+      <MenuSettings today={today} />
 
       <dl className="rounded-2xl border border-line bg-card px-4 text-sm">
         <Row

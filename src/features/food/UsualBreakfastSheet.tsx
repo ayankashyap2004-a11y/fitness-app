@@ -13,8 +13,10 @@ interface Props {
   date: string
   library: FoodLibrary
   pinned: PinnedItem[]
-  /** Best guess for today's mess breakfast item; Phase 4 fills this from the menu. */
+  /** Best guess for today's mess breakfast item: the menu's first, else the most logged. */
   suggestedMessId?: string
+  /** Today's menu breakfast items, listed first in the picker. */
+  menuIds: string[]
   onClose: () => void
 }
 
@@ -23,7 +25,7 @@ interface Row {
   serving: Serving
 }
 
-export function UsualBreakfastSheet({ date, library, pinned, suggestedMessId, onClose }: Props) {
+export function UsualBreakfastSheet({ date, library, pinned, suggestedMessId, menuIds, onClose }: Props) {
   const eggRows = useMemo(
     () =>
       pinned
@@ -119,6 +121,7 @@ export function UsualBreakfastSheet({ date, library, pinned, suggestedMessId, on
           ) : picking ? (
             <MessPicker
               library={library}
+              menuIds={menuIds}
               onPick={(food) => {
                 setMess({ food, serving: defaultServing(food) })
                 setPicking(false)
@@ -139,15 +142,22 @@ export function UsualBreakfastSheet({ date, library, pinned, suggestedMessId, on
   )
 }
 
-function MessPicker({ library, onPick, onSkip }: { library: FoodLibrary; onPick: (f: FoodView) => void; onSkip: () => void }) {
+interface PickerProps {
+  library: FoodLibrary
+  menuIds: string[]
+  onPick: (f: FoodView) => void
+  onSkip: () => void
+}
+
+function MessPicker({ library, menuIds, onPick, onSkip }: PickerProps) {
   const [q, setQ] = useState('')
-  const breakfastDishes = useMemo(
-    () =>
-      library.foods
-        .filter((f) => f.source === 'mess' && f.slots.includes('breakfast') && f.timesOnMenu > 0)
-        .sort((a, b) => b.timesOnMenu - a.timesOnMenu),
-    [library],
-  )
+  const breakfastDishes = useMemo(() => {
+    const onMenu = menuIds.map((id) => library.byId.get(id)).filter((f): f is FoodView => !!f)
+    const common = library.foods
+      .filter((f) => f.source === 'mess' && f.slots.includes('breakfast') && f.timesOnMenu > 0 && !menuIds.includes(f.id))
+      .sort((a, b) => b.timesOnMenu - a.timesOnMenu)
+    return [...onMenu, ...common]
+  }, [library, menuIds])
   const list = q.trim() ? searchFoods(library.foods, q, 12) : breakfastDishes.slice(0, 12)
 
   return (
@@ -174,7 +184,10 @@ function MessPicker({ library, onPick, onSkip }: { library: FoodLibrary; onPick:
               onClick={() => onPick(f)}
               className="flex min-h-11 w-full items-center justify-between rounded-lg px-2 text-left active:bg-line"
             >
-              <span>{f.name}</span>
+              <span>
+                {f.name}
+                {menuIds.includes(f.id) && <span className="ml-2 text-xs text-accent">on menu</span>}
+              </span>
               <span className="text-sm text-muted tabular-nums">{f.portion.kcal} kcal</span>
             </button>
           </li>

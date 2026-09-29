@@ -9,6 +9,7 @@ import {
   snapQty,
   splitUnit,
   sumMacros,
+  tidyDishName,
   unitOptions,
   type ArchetypeLike,
   type FoodItemLike,
@@ -175,6 +176,17 @@ describe('defaultServing', () => {
 
   it('ignores a last unit that no longer exists', () => {
     expect(defaultServing({ units, lastQty: 2, lastUnit: 'bowl' })).toEqual({ qty: 1, unit: 'katori (~150 g)' })
+  })
+})
+
+describe('tidyDishName', () => {
+  it('capitalises all-lowercase names', () => {
+    expect(tidyDishName('  egg  fried rice ')).toBe('Egg Fried Rice')
+  })
+
+  it('keeps names that already have capitals', () => {
+    expect(tidyDishName("Mom's rajma")).toBe("Mom's rajma")
+    expect(tidyDishName('KFC Zinger')).toBe('KFC Zinger')
   })
 })
 

@@ -3,6 +3,7 @@ import { MacroBar } from '../../components/MacroBar'
 import { TargetNotes } from '../../components/TargetNotes'
 import { useConsumed, useTargets, useToday } from '../../db/hooks'
 import { db } from '../../db/schema'
+import { TonightCard } from './TonightCard'
 import { WeightQuickLog } from './WeightQuickLog'
 
 export function TodayScreen() {
@@ -37,6 +38,7 @@ export function TodayScreen() {
             </p>
           </div>
           <TargetNotes targets={state.targets} />
+          <TonightCard today={today} proteinTarget={state.targets.protein} />
         </>
       )}
 

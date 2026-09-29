@@ -90,6 +90,8 @@ export interface FoodView {
   portion: Macros
   units: UnitOption[]
   archetypeName?: string
+  /** Archetype group, e.g. 'Non-veg'. */
+  group?: string
   /** Values checked against a published source. */
   sourced: boolean
   /** The user has overridden at least one value. */
@@ -120,6 +122,7 @@ export interface FoodItemLike {
 
 export interface ArchetypeLike {
   name: string
+  group?: string
   defaultUnit: string
   perPortion: Macros
   altUnits: AltUnitLike[]
@@ -140,6 +143,7 @@ export function resolveFood(item: FoodItemLike, archetype?: ArchetypeLike): Food
     portion: resolvePortion(base, item.override, item.userOverride),
     units: unitOptions(defaultUnit, archetype ? archetype.altUnits : item.servingUnits),
     archetypeName: archetype?.name,
+    group: archetype?.group,
     sourced: !hasUser && !item.override && (archetype?.sourced ?? item.sourced ?? false),
     edited: hasUser,
     slots: item.slots ?? [],
@@ -158,6 +162,17 @@ export function defaultServing(food: Pick<FoodView, 'units' | 'lastQty' | 'lastU
   }
 }
 
+/** Case-insensitive, whitespace-insensitive key used to match names to dishes. */
+export function normalizeName(s: string): string {
+  return s.trim().toLowerCase().replace(/\s+/g, ' ')
+}
+
+/** 'egg fried rice' → 'Egg Fried Rice'. Leaves names with any capitals as typed. */
+export function tidyDishName(s: string): string {
+  const t = s.trim().replace(/\s+/g, ' ')
+  return t === t.toLowerCase() ? t.replace(/(^|\s)(\p{L})/gu, (_, sp: string, c: string) => sp + c.toUpperCase()) : t
+}
+
 export function searchKeysFor(name: string, aliases: readonly string[] = []): string[] {
-  return [...new Set([name, ...aliases].map((s) => s.trim().toLowerCase()).filter(Boolean))]
+  return [...new Set([name, ...aliases].map(normalizeName).filter(Boolean))]
 }

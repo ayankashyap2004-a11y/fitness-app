@@ -1,0 +1,61 @@
+{
+  "weekStart": "2026-09-28",
+  "days": [
+    {
+      "date": "2026-09-28",
+      "breakfast": ["Masala Poha", "French Toast"],
+      "lunch": ["Amritsari Chole", "Kulche", "Veg Pulav", "Boondi Raita", "Dal Tadka", "Pakoda Kadi"],
+      "snacks": ["Bhel"],
+      "dinner": ["Paneer Paratha", "Achari Aloo Paratha", "Yellow Dal", "Coriander Rice", "Curd"],
+      "dessert": ["Chocolate Pudding"]
+    },
+    {
+      "date": "2026-09-29",
+      "breakfast": ["Idli", "Sambhar"],
+      "lunch": ["Rajma Masala", "Jeera Rice", "Roti", "Aloo Methi", "Cucumber Raita"],
+      "snacks": ["Samosa Chaat"],
+      "dinner": ["Butter Chicken", "Paneer Butter Masaala", "Butter Naan", "Jeera Rice", "Dal Makhani"],
+      "dessert": ["Gulab Jamun"]
+    },
+    {
+      "date": "2026-09-30",
+      "breakfast": ["Aloo Paratha", "Curd"],
+      "lunch": ["Kadhai Paneer", "Roti", "Dal Fry", "Steamed Rice", "Bhindi Masala"],
+      "snacks": ["Veg Maggi"],
+      "dinner": ["Dragon Paneer", "Veg Hakka Noodles", "Manchow Soup", "Roti", "Yellow Dal"],
+      "dessert": ["Vanilla Ice Cream"]
+    },
+    {
+      "date": "2026-10-01",
+      "breakfast": ["Veg Upma", "Boiled Egg"],
+      "lunch": ["Chole Masala", "Bhature", "Veg Pulao", "Boondi Raita"],
+      "snacks": ["Dabeli"],
+      "dinner": ["Chicken Biriyani", "Non Veg Gravy", "Mix Veg Raita", "Roti"],
+      "dessert": ["Rice Kheer"]
+    },
+    {
+      "date": "2026-10-02",
+      "breakfast": ["Besan Cheela"],
+      "lunch": ["Dal Palak", "Jeera Aloo", "Roti", "Plain Rice", "Curd"],
+      "snacks": ["Khaman"],
+      "dinner": ["Egg Curry", "Jeera Rice", "Roti", "Dal Tadka"],
+      "dessert": ["Jalebi"]
+    },
+    {
+      "date": "2026-10-03",
+      "breakfast": ["Masala Dosa", "Coconut Chutney", "Sambar"],
+      "lunch": ["Paneer Do Pyaza", "Roti", "Dal Fry", "Lemon Rice"],
+      "snacks": ["Pav Bhaji"],
+      "dinner": ["Veg Kofta", "Laccha Paratha", "Masoor Dal", "Jeera Rice"],
+      "dessert": ["Shrikhand"]
+    },
+    {
+      "date": "2026-10-04",
+      "breakfast": ["Chole Bhature Mini", "Tea"],
+      "lunch": ["Veg Biryani", "Mix Veg Raita", "Mirchi Ka Salan"],
+      "snacks": ["Bread Pakoda"],
+      "dinner": ["Chicken Kolhapuri", "Roti", "Yellow Dal", "Plain Rice"],
+      "dessert": ["Rasmalai"]
+    }
+  ]
+}

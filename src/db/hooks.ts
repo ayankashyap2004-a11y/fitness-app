@@ -91,3 +91,22 @@ export function useRecentInSlot(slot: MealSlot, today: string): string[] | undef
     return [...stats.entries()].sort((a, b) => b[1].n - a[1].n || b[1].last.localeCompare(a[1].last)).map(([id]) => id)
   }, [slot, today])
 }
+
+export type MenuForDay = Partial<Record<MealSlot, string[]>>
+
+/** Imported mess menu for one date, by slot. Empty object if none. */
+export function useMenuDay(date: string): MenuForDay | undefined {
+  return useLiveQuery(async () => {
+    const rows = await db.menuDays.where('date').equals(date).toArray()
+    return Object.fromEntries(rows.map((r) => [r.slot, r.foodIds])) as MenuForDay
+  }, [date])
+}
+
+/** First and last dates with an imported menu, or null. */
+export function useMenuRange(): { first: string; last: string } | null | undefined {
+  return useLiveQuery(async () => {
+    const first = await db.menuDays.orderBy('date').first()
+    const last = await db.menuDays.orderBy('date').last()
+    return first && last ? { first: first.date, last: last.date } : null
+  })
+}

@@ -1,0 +1,3626 @@
+[
+ {
+  "id": "achari-aloo-paratha",
+  "name": "Achari Aloo Paratha",
+  "aliases": [],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "breakfast",
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "adrak-chai",
+  "name": "Adrak Chai",
+  "aliases": [],
+  "archetypeId": "tea",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "ajwain-paratha",
+  "name": "Ajwain Paratha",
+  "aliases": [],
+  "archetypeId": "plain_paratha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "aloo-bhaja",
+  "name": "Aloo Bhaja",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "aloo-capsicum",
+  "name": "Aloo Capsicum",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "aloo-methi",
+  "name": "Aloo Methi",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "aloo-palak",
+  "name": "Aloo Palak",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "aloo-paratha",
+  "name": "Aloo Paratha",
+  "aliases": [],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "aloo-rasawala",
+  "name": "Aloo Rasawala",
+  "aliases": [
+   "Aloo Rassawala"
+  ],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "aloo-sabzi",
+  "name": "Aloo Sabzi",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "aloo-tikki-chaat",
+  "name": "Aloo Tikki Chaat",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "american-nuts-ice-cream",
+  "name": "American Nuts Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "amritsari-chole",
+  "name": "Amritsari Chole",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "arhar-dal",
+  "name": "Arhar Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 7
+ },
+ {
+  "id": "badam-carnival-ice-cream",
+  "name": "Badam Carnival Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bagara-rice",
+  "name": "Bagara Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "baingan-bharta",
+  "name": "Baingan Bharta",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "baked-beans-toast",
+  "name": "Baked Beans Toast",
+  "aliases": [],
+  "archetypeId": "toast_roll",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "baked-enchiladas",
+  "name": "Baked Enchiladas",
+  "aliases": [
+   "Baked Enchilladas"
+  ],
+  "archetypeId": "mexican",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "baked-veg",
+  "name": "Baked Veg",
+  "aliases": [],
+  "archetypeId": "mexican",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "banana-pancakes",
+  "name": "Banana Pancakes",
+  "aliases": [],
+  "archetypeId": "pancakes",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "banana-raita",
+  "name": "Banana Raita",
+  "aliases": [],
+  "archetypeId": "raita",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "basanti-pulao",
+  "name": "Basanti Pulao",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "batata-bhaji",
+  "name": "Batata Bhaji",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bedmi-puri",
+  "name": "Bedmi Puri",
+  "aliases": [],
+  "archetypeId": "puri",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "beetroot-cutlet",
+  "name": "Beetroot Cutlet",
+  "aliases": [],
+  "archetypeId": "kebab",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "beetroot-thepla",
+  "name": "Beetroot Thepla",
+  "aliases": [],
+  "archetypeId": "thepla",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "bengali-dum-aloo",
+  "name": "Bengali Dum Aloo",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bengali-payasam",
+  "name": "Bengali Payasam",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "besan-bhindi",
+  "name": "Besan Bhindi",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "besan-cheela",
+  "name": "Besan Cheela",
+  "aliases": [],
+  "archetypeId": "cheela",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bhaji",
+  "name": "Bhaji",
+  "aliases": [
+   "Bhaji Pav",
+   "Pav Bhaji"
+  ],
+  "archetypeId": "bhaji",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bhature",
+  "name": "Bhature",
+  "aliases": [],
+  "archetypeId": "bhatura",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "bhel",
+  "name": "Bhel",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 3,
+  "override": {
+   "kcal": 200,
+   "protein": 5,
+   "carbs": 31.5,
+   "fat": 6
+  }
+ },
+ {
+  "id": "bhindi-bharwa",
+  "name": "Bhindi Bharwa",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bhindi-do-pyaza",
+  "name": "Bhindi Do Pyaza",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bhindi-masala",
+  "name": "Bhindi Masala",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "black-dal",
+  "name": "Black Dal",
+  "aliases": [],
+  "archetypeId": "rich_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "bombay-sandwich",
+  "name": "Bombay Sandwich",
+  "aliases": [],
+  "archetypeId": "sandwich",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "boondi-raita",
+  "name": "Boondi Raita",
+  "aliases": [],
+  "archetypeId": "raita",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "bread-pakoda",
+  "name": "Bread Pakoda",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "bread-sticks",
+  "name": "Bread Sticks",
+  "aliases": [],
+  "archetypeId": "bread_sticks",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "butter-chicken",
+  "name": "Butter Chicken",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2,
+  "override": {
+   "kcal": 300,
+   "protein": 18,
+   "carbs": 12.0,
+   "fat": 20
+  }
+ },
+ {
+  "id": "butter-naan",
+  "name": "Butter Naan",
+  "aliases": [],
+  "archetypeId": "naan_kulcha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "butter-paneer",
+  "name": "Butter Paneer",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "butter-paneer-masala",
+  "name": "Butter Paneer Masala",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "buttermilk",
+  "name": "Buttermilk",
+  "aliases": [],
+  "archetypeId": "buttermilk",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "cabbage-green-peas-curry",
+  "name": "Cabbage Green Peas Curry",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cabbage-sabzi",
+  "name": "Cabbage Sabzi",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cabbage-tamatar",
+  "name": "Cabbage Tamatar",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "champaran-chicken",
+  "name": "Champaran Chicken",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chana-chaat",
+  "name": "Chana Chaat",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "chana-dal",
+  "name": "Chana Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cheese-corn-bread-roll",
+  "name": "Cheese Corn Bread Roll",
+  "aliases": [],
+  "archetypeId": "toast_roll",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "cheese-kofta",
+  "name": "Cheese Kofta",
+  "aliases": [],
+  "archetypeId": "kofta_malai",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "cheese-macaroni",
+  "name": "Cheese Macaroni",
+  "aliases": [
+   "Cheese Macroni"
+  ],
+  "archetypeId": "pasta",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cheese-maggi",
+  "name": "Cheese Maggi",
+  "aliases": [
+   "Cheese Maggie"
+  ],
+  "archetypeId": "maggi",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cheese-onion-paratha",
+  "name": "Cheese Onion Paratha",
+  "aliases": [],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cheesy-fries",
+  "name": "Cheesy Fries",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chennai-chicken-biryani",
+  "name": "Chennai Chicken Biryani",
+  "aliases": [],
+  "archetypeId": "chicken_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chicken-biryani",
+  "name": "Chicken Biryani",
+  "aliases": [
+   "Chicken Biriyani"
+  ],
+  "archetypeId": "chicken_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chicken-dum-biryani",
+  "name": "Chicken Dum Biryani",
+  "aliases": [],
+  "archetypeId": "chicken_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chicken-ghee-roast",
+  "name": "Chicken Ghee Roast",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "chicken-gravy",
+  "name": "Chicken Gravy",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "chicken-kolhapuri",
+  "name": "Chicken Kolhapuri",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chicken-stew",
+  "name": "Chicken Stew",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chickpea-salad",
+  "name": "Chickpea Salad",
+  "aliases": [],
+  "archetypeId": "protein_salad",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "chilli-gobhi-dry",
+  "name": "Chilli Gobhi Dry",
+  "aliases": [
+   "Chilly Gobhi Dry"
+  ],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "choco-brownie-ice-cream",
+  "name": "Choco Brownie Ice Cream",
+  "aliases": [
+   "Choco-brownie Ice-cream"
+  ],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "choco-chip-ice-cream",
+  "name": "Choco Chip Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chocolate-pancakes",
+  "name": "Chocolate Pancakes",
+  "aliases": [],
+  "archetypeId": "pancakes",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chocolate-pudding",
+  "name": "Chocolate Pudding",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "chokha",
+  "name": "Chokha",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cholar-dal",
+  "name": "Cholar Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "chole-masala",
+  "name": "Chole Masala",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "churma",
+  "name": "Churma",
+  "aliases": [],
+  "archetypeId": "rich_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "coconut-barfi",
+  "name": "Coconut Barfi",
+  "aliases": [],
+  "archetypeId": "syrup_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "coconut-chutney",
+  "name": "Coconut Chutney",
+  "aliases": [],
+  "archetypeId": "chutney_rich",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "cold-coffee",
+  "name": "Cold Coffee",
+  "aliases": [],
+  "archetypeId": "milk_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "coleslaw-sandwich",
+  "name": "Coleslaw Sandwich",
+  "aliases": [],
+  "archetypeId": "sandwich",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "coriander-rice",
+  "name": "Coriander Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 8
+ },
+ {
+  "id": "corn-chaat",
+  "name": "Corn Chaat",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "corn-masala",
+  "name": "Corn Masala",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "corn-mayo-sandwich",
+  "name": "Corn Mayo Sandwich",
+  "aliases": [],
+  "archetypeId": "sandwich",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "cucumber-raita",
+  "name": "Cucumber Raita",
+  "aliases": [],
+  "archetypeId": "raita",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 7
+ },
+ {
+  "id": "curd",
+  "name": "Curd",
+  "aliases": [],
+  "archetypeId": "curd",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 53
+ },
+ {
+  "id": "curd-rice",
+  "name": "Curd Rice",
+  "aliases": [],
+  "archetypeId": "curd_rice_khichdi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "dabeli",
+  "name": "Dabeli",
+  "aliases": [],
+  "archetypeId": "dabeli",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "dahi",
+  "name": "Dahi",
+  "aliases": [],
+  "archetypeId": "curd",
+  "slots": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "dahi-puri",
+  "name": "Dahi Puri",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "dahi-wada",
+  "name": "Dahi Wada",
+  "aliases": [
+   "Dahi Vada"
+  ],
+  "archetypeId": "dahi_wada",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "dal-fry",
+  "name": "Dal Fry",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 16
+ },
+ {
+  "id": "dal-makhani",
+  "name": "Dal Makhani",
+  "aliases": [],
+  "archetypeId": "rich_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "dal-palak",
+  "name": "Dal Palak",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "dal-tadka",
+  "name": "Dal Tadka",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 13
+ },
+ {
+  "id": "dal-wada",
+  "name": "Dal Wada",
+  "aliases": [
+   "Dal Vada"
+  ],
+  "archetypeId": "dal_wada",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "desi-chana",
+  "name": "Desi Chana",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "dhaba-style-dal",
+  "name": "Dhaba Style Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "dhaba-style-egg-curry",
+  "name": "Dhaba Style Egg Curry",
+  "aliases": [],
+  "archetypeId": "egg_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "dry-ghughni-masala",
+  "name": "Dry Ghughni Masala",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "dry-rajma-masala",
+  "name": "Dry Rajma Masala",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "dry-soya-bean-masala",
+  "name": "Dry Soya Bean Masala",
+  "aliases": [],
+  "archetypeId": "soya",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "dum-aloo",
+  "name": "Dum Aloo",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "egg-biryani",
+  "name": "Egg Biryani",
+  "aliases": [],
+  "archetypeId": "egg_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "egg-dhaba-curry",
+  "name": "Egg Dhaba Curry",
+  "aliases": [
+   "Egg Dhaba Style Curry"
+  ],
+  "archetypeId": "egg_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "egg-ghotala",
+  "name": "Egg Ghotala",
+  "aliases": [],
+  "archetypeId": "egg_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 280,
+   "protein": 14,
+   "carbs": 11.0,
+   "fat": 20
+  }
+ },
+ {
+  "id": "egg-gravy",
+  "name": "Egg Gravy",
+  "aliases": [],
+  "archetypeId": "egg_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "elaichi-chai",
+  "name": "Elaichi Chai",
+  "aliases": [],
+  "archetypeId": "tea",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "elaichi-lassi",
+  "name": "Elaichi Lassi",
+  "aliases": [],
+  "archetypeId": "milk_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "fanta",
+  "name": "Fanta",
+  "aliases": [],
+  "archetypeId": "sweet_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "french-toast",
+  "name": "French Toast",
+  "aliases": [],
+  "archetypeId": "french_toast",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 7
+ },
+ {
+  "id": "fried-mirchi",
+  "name": "Fried Mirchi",
+  "aliases": [],
+  "archetypeId": "fried_mirchi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "fried-papad",
+  "name": "Fried Papad",
+  "aliases": [],
+  "archetypeId": "papad_fried",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "fruit-custard",
+  "name": "Fruit Custard",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "fryums",
+  "name": "Fryums",
+  "aliases": [],
+  "archetypeId": "fryums",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 25
+ },
+ {
+  "id": "garlic-naan",
+  "name": "Garlic Naan",
+  "aliases": [],
+  "archetypeId": "naan_kulcha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "garlic-tadka-dal",
+  "name": "Garlic Tadka Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "gatte-ki-sabji",
+  "name": "Gatte Ki Sabji",
+  "aliases": [
+   "Gatte Ki Sabzi"
+  ],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "ghee-rice",
+  "name": "Ghee Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "ghughra-sandwich",
+  "name": "Ghughra Sandwich",
+  "aliases": [
+   "Ghugra Sandwich"
+  ],
+  "archetypeId": "sandwich",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "goan-egg-curry",
+  "name": "Goan Egg Curry",
+  "aliases": [],
+  "archetypeId": "egg_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "gobhi-matar",
+  "name": "Gobhi Matar",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "gobhi-paratha",
+  "name": "Gobhi Paratha",
+  "aliases": [],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "green-chutney",
+  "name": "Green Chutney",
+  "aliases": [],
+  "archetypeId": "chutney_light",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "green-moong",
+  "name": "Green Moong",
+  "aliases": [
+   "Moong Masala"
+  ],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "green-salad",
+  "name": "Green Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "gulab-jamun",
+  "name": "Gulab Jamun",
+  "aliases": [],
+  "archetypeId": "syrup_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "hara-bhara-kebab",
+  "name": "Hara Bhara Kebab",
+  "aliases": [],
+  "archetypeId": "kebab",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "hara-pulao",
+  "name": "Hara Pulao",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "herb-butter-rice",
+  "name": "Herb Butter Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "herbed-rice",
+  "name": "Herbed Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "honey-chilli-potato",
+  "name": "Honey Chilli Potato",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "hot-sour-soup",
+  "name": "Hot & Sour Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "hyderabadi-dal-tadka",
+  "name": "Hyderabadi Dal Tadka",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "ice-cream",
+  "name": "Ice Cream",
+  "aliases": [
+   "Ice-Cream",
+   "Ice-Cream (TBD)",
+   "Ice Cream (Flavour - TBD)"
+  ],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "idli",
+  "name": "Idli",
+  "aliases": [],
+  "archetypeId": "idli",
+  "slots": [
+   "breakfast",
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "idli-takatak",
+  "name": "Idli Takatak",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 220,
+   "protein": 5,
+   "carbs": 29.8,
+   "fat": 9
+  }
+ },
+ {
+  "id": "indori-poha",
+  "name": "Indori Poha",
+  "aliases": [],
+  "archetypeId": "poha_upma",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 3,
+  "override": {
+   "kcal": 250,
+   "protein": 4,
+   "carbs": 36.0,
+   "fat": 10
+  }
+ },
+ {
+  "id": "jalebi",
+  "name": "Jalebi",
+  "aliases": [],
+  "archetypeId": "syrup_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 150,
+   "protein": 1,
+   "carbs": 23.0,
+   "fat": 6
+  }
+ },
+ {
+  "id": "jeera-aloo",
+  "name": "Jeera Aloo",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "jeera-rice",
+  "name": "Jeera Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 14
+ },
+ {
+  "id": "kadhai-paneer",
+  "name": "Kadhai Paneer",
+  "aliases": [
+   "Kadai Paneer"
+  ],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "kadhi-pakoda",
+  "name": "Kadhi Pakoda",
+  "aliases": [],
+  "archetypeId": "pakoda_kadhi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "kakdi-salad",
+  "name": "Kakdi Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "kashmiri-dum-aloo",
+  "name": "Kashmiri Dum Aloo",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "kerala-egg-curry",
+  "name": "Kerala Egg Curry",
+  "aliases": [],
+  "archetypeId": "egg_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "khaman",
+  "name": "Khaman",
+  "aliases": [],
+  "archetypeId": "khaman",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "khichdi",
+  "name": "Khichdi",
+  "aliases": [],
+  "archetypeId": "curd_rice_khichdi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "kulche",
+  "name": "Kulche",
+  "aliases": [],
+  "archetypeId": "naan_kulcha",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "kurkuri-bhindi",
+  "name": "Kurkuri Bhindi",
+  "aliases": [],
+  "archetypeId": "fried_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 220,
+   "protein": 3,
+   "carbs": 18.2,
+   "fat": 15
+  }
+ },
+ {
+  "id": "laccha-paratha",
+  "name": "Laccha Paratha",
+  "aliases": [],
+  "archetypeId": "plain_paratha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "lauki-chana-dal",
+  "name": "Lauki Chana Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "lauki-kofta",
+  "name": "Lauki Kofta",
+  "aliases": [],
+  "archetypeId": "kofta_malai",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "lehsuni-chutney",
+  "name": "Lehsuni Chutney",
+  "aliases": [],
+  "archetypeId": "chutney_light",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "lehsuni-dal",
+  "name": "Lehsuni Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "lemon-coriander-soup",
+  "name": "Lemon Coriander Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "lemon-rice",
+  "name": "Lemon Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "litti",
+  "name": "Litti",
+  "aliases": [
+   "Litti Chokha"
+  ],
+  "archetypeId": "litti",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "luchi-poori",
+  "name": "Luchi Poori",
+  "aliases": [],
+  "archetypeId": "puri",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "macaroni-salad",
+  "name": "Macaroni Salad",
+  "aliases": [
+   "Macroni Salad"
+  ],
+  "archetypeId": "mayo_salad",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 7
+ },
+ {
+  "id": "makhana-matar-masala",
+  "name": "Makhana Matar Masala",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "malai-kofta",
+  "name": "Malai Kofta",
+  "aliases": [],
+  "archetypeId": "kofta_malai",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "malpua",
+  "name": "Malpua",
+  "aliases": [],
+  "archetypeId": "syrup_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "manchow-soup",
+  "name": "Manchow Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "mango-ice-cream",
+  "name": "Mango Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "masala-baati",
+  "name": "Masala Baati",
+  "aliases": [],
+  "archetypeId": "baati",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "masala-dosa",
+  "name": "Masala Dosa",
+  "aliases": [],
+  "archetypeId": "dosa_masala",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "masala-jeera-aloo",
+  "name": "Masala Jeera Aloo",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "masala-khichdi",
+  "name": "Masala Khichdi",
+  "aliases": [],
+  "archetypeId": "curd_rice_khichdi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "masala-matar-pulao",
+  "name": "Masala Matar Pulao",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "masala-poha",
+  "name": "Masala Poha",
+  "aliases": [],
+  "archetypeId": "poha_upma",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "masala-pulao",
+  "name": "Masala Pulao",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "masala-rice",
+  "name": "Masala Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "masala-uttapam",
+  "name": "Masala Uttapam",
+  "aliases": [],
+  "archetypeId": "uttapam",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "masoor-dal",
+  "name": "Masoor Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 6
+ },
+ {
+  "id": "matar-paneer",
+  "name": "Matar Paneer",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "matar-pulao",
+  "name": "Matar Pulao",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mayonnaise-potato-salad",
+  "name": "Mayonnaise Potato Salad",
+  "aliases": [],
+  "archetypeId": "mayo_salad",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "medu-wada",
+  "name": "Medu Wada",
+  "aliases": [
+   "Medu Vada"
+  ],
+  "archetypeId": "medu_wada",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "methi-matar-malai",
+  "name": "Methi Matar Malai",
+  "aliases": [],
+  "archetypeId": "kofta_malai",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "methi-thepla",
+  "name": "Methi Thepla",
+  "aliases": [],
+  "archetypeId": "thepla",
+  "slots": [
+   "breakfast",
+   "lunch"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "mexican-rice",
+  "name": "Mexican Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mexican-salad",
+  "name": "Mexican Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mexican-tacos",
+  "name": "Mexican Tacos",
+  "aliases": [],
+  "archetypeId": "mexican",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mithi-boondi",
+  "name": "Mithi Boondi",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 300,
+   "protein": 4,
+   "carbs": 39.5,
+   "fat": 14
+  }
+ },
+ {
+  "id": "mix-dal",
+  "name": "Mix Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mix-ice-cream",
+  "name": "Mix Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mix-pakoda",
+  "name": "Mix Pakoda",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mix-salad",
+  "name": "Mix Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mix-usal",
+  "name": "Mix Usal",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mix-veg",
+  "name": "Mix Veg",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mix-veg-curry",
+  "name": "Mix Veg Curry",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mix-veg-paratha",
+  "name": "Mix Veg Paratha",
+  "aliases": [
+   "Mix-Veg Paratha"
+  ],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "breakfast",
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "mix-veg-raita",
+  "name": "Mix Veg Raita",
+  "aliases": [
+   "Mix-Veg Raita"
+  ],
+  "archetypeId": "raita",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "mixed-dal",
+  "name": "Mixed Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mooli-paratha",
+  "name": "Mooli Paratha",
+  "aliases": [],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "moong-dal",
+  "name": "Moong Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "moong-dal-cheela",
+  "name": "Moong Dal Cheela",
+  "aliases": [],
+  "archetypeId": "cheela",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "moong-dal-halwa",
+  "name": "Moong Dal Halwa",
+  "aliases": [],
+  "archetypeId": "rich_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mughlai-chicken",
+  "name": "Mughlai Chicken",
+  "aliases": [],
+  "archetypeId": "chicken_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mughlai-mix-veg",
+  "name": "Mughlai Mix Veg",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mughlai-paneer",
+  "name": "Mughlai Paneer",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "muradabadi-dal",
+  "name": "Muradabadi Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mushroom-masala",
+  "name": "Mushroom Masala",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "mushroom-soup",
+  "name": "Mushroom Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mutton-biryani",
+  "name": "Mutton Biryani",
+  "aliases": [],
+  "archetypeId": "mutton_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mutton-gravy",
+  "name": "Mutton Gravy",
+  "aliases": [],
+  "archetypeId": "mutton_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mysore-bonda",
+  "name": "Mysore Bonda",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "mysore-chutney",
+  "name": "Mysore Chutney",
+  "aliases": [],
+  "archetypeId": "chutney_rich",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "naan",
+  "name": "Naan",
+  "aliases": [],
+  "archetypeId": "naan_kulcha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "nimbu-paani",
+  "name": "Nimbu Paani",
+  "aliases": [],
+  "archetypeId": "sweet_drink",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "non-veg-gravy",
+  "name": "Non Veg Gravy",
+  "aliases": [],
+  "archetypeId": "nonveg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "onion-masala-salad",
+  "name": "Onion Masala Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "onion-paratha",
+  "name": "Onion Paratha",
+  "aliases": [],
+  "archetypeId": "stuffed_paratha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "onion-raita",
+  "name": "Onion Raita",
+  "aliases": [],
+  "archetypeId": "raita",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "onion-rings-salad",
+  "name": "Onion Rings Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "onion-salad",
+  "name": "Onion Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "onion-uttapam",
+  "name": "Onion Uttapam",
+  "aliases": [],
+  "archetypeId": "uttapam",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paani-puri",
+  "name": "Paani Puri",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 200,
+   "protein": 3,
+   "carbs": 33.5,
+   "fat": 6
+  }
+ },
+ {
+  "id": "pakoda-kadhi",
+  "name": "Pakoda Kadhi",
+  "aliases": [
+   "Pakoda Kadi"
+  ],
+  "archetypeId": "pakoda_kadhi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "palak-dal",
+  "name": "Palak Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "palak-paneer",
+  "name": "Palak Paneer",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "palak-poori",
+  "name": "Palak Poori",
+  "aliases": [],
+  "archetypeId": "puri",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "pancharatna-dal",
+  "name": "Pancharatna Dal",
+  "aliases": [
+   "Panchratna Dal"
+  ],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "paneer-bhurji",
+  "name": "Paneer Bhurji",
+  "aliases": [
+   "Paneer Bhurjee"
+  ],
+  "archetypeId": "paneer_bhurji",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "paneer-bhurji-sandwich",
+  "name": "Paneer Bhurji Sandwich",
+  "aliases": [],
+  "archetypeId": "sandwich",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-biryani",
+  "name": "Paneer Biryani",
+  "aliases": [],
+  "archetypeId": "paneer_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-do-pyaza",
+  "name": "Paneer Do Pyaza",
+  "aliases": [
+   "Paneer Do pyaza"
+  ],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-ghee-roast",
+  "name": "Paneer Ghee Roast",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "paneer-kali-mirch",
+  "name": "Paneer Kali Mirch",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-khurchan",
+  "name": "Paneer Khurchan",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-kolhapuri",
+  "name": "Paneer Kolhapuri",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-makhani",
+  "name": "Paneer Makhani",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "paneer-paratha",
+  "name": "Paneer Paratha",
+  "aliases": [],
+  "archetypeId": "paneer_paratha",
+  "slots": [
+   "breakfast",
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "paneer-pasanda",
+  "name": "Paneer Pasanda",
+  "aliases": [],
+  "archetypeId": "paneer_dish",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "papad",
+  "name": "Papad",
+  "aliases": [],
+  "archetypeId": "papad_roasted",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 31
+ },
+ {
+  "id": "papad-churi",
+  "name": "Papad Churi",
+  "aliases": [
+   "Papad-Churi"
+  ],
+  "archetypeId": "papad_churi",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "papdi-chaat",
+  "name": "Papdi Chaat",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "parle-g",
+  "name": "Parle G",
+  "aliases": [
+   "Parle-G"
+  ],
+  "archetypeId": "parle_g",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "parotta",
+  "name": "Parotta",
+  "aliases": [],
+  "archetypeId": "plain_paratha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "pasta",
+  "name": "Pasta",
+  "aliases": [],
+  "archetypeId": "pasta",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "pav",
+  "name": "Pav",
+  "aliases": [],
+  "archetypeId": "pav",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "peanut-chaat",
+  "name": "Peanut Chaat",
+  "aliases": [],
+  "archetypeId": "peanut_chaat",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "peanut-chutney",
+  "name": "Peanut Chutney",
+  "aliases": [],
+  "archetypeId": "chutney_rich",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "peas-curry",
+  "name": "Peas Curry",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "peas-pulao",
+  "name": "Peas Pulao",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "penne-spaghetti",
+  "name": "Penne & Spaghetti",
+  "aliases": [],
+  "archetypeId": "pasta",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "peri-peri-fries",
+  "name": "Peri Peri Fries",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 3,
+  "override": {
+   "kcal": 320,
+   "protein": 4,
+   "carbs": 37.8,
+   "fat": 17
+  }
+ },
+ {
+  "id": "pickle",
+  "name": "Pickle",
+  "aliases": [],
+  "archetypeId": "pickle",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 35
+ },
+ {
+  "id": "pindi-chole",
+  "name": "Pindi Chole",
+  "aliases": [
+   "Pindi Chana"
+  ],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "pineapple-juice",
+  "name": "Pineapple Juice",
+  "aliases": [],
+  "archetypeId": "sweet_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "pineapple-raita",
+  "name": "Pineapple Raita",
+  "aliases": [],
+  "archetypeId": "raita",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "pista-badam-milk",
+  "name": "Pista Badam Milk",
+  "aliases": [],
+  "archetypeId": "milk_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "pithla",
+  "name": "Pithla",
+  "aliases": [],
+  "archetypeId": "pithla",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "plain-dosa",
+  "name": "Plain Dosa",
+  "aliases": [],
+  "archetypeId": "dosa_plain",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "plain-rice",
+  "name": "Plain Rice",
+  "aliases": [],
+  "archetypeId": "plain_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 8
+ },
+ {
+  "id": "podi-masala",
+  "name": "Podi Masala",
+  "aliases": [],
+  "archetypeId": "podi",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "podi-masala-dosa",
+  "name": "Podi Masala Dosa",
+  "aliases": [],
+  "archetypeId": "dosa_masala",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "podi-onion-uttapam",
+  "name": "Podi Onion Uttapam",
+  "aliases": [],
+  "archetypeId": "uttapam",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "pongal",
+  "name": "Pongal",
+  "aliases": [],
+  "archetypeId": "curd_rice_khichdi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "punjabi-kadhi",
+  "name": "Punjabi Kadhi",
+  "aliases": [],
+  "archetypeId": "kadhi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "punjabi-tadka-maggi",
+  "name": "Punjabi Tadka Maggi",
+  "aliases": [],
+  "archetypeId": "maggi",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "punugulu",
+  "name": "Punugulu",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "puri",
+  "name": "Puri",
+  "aliases": [],
+  "archetypeId": "puri",
+  "slots": [
+   "breakfast",
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "pyaaz-kachori",
+  "name": "Pyaaz Kachori",
+  "aliases": [],
+  "archetypeId": "kachori",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "ragda-paani-puri",
+  "name": "Ragda Paani Puri",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "ragi-uttapam",
+  "name": "Ragi Uttapam",
+  "aliases": [],
+  "archetypeId": "uttapam",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "rajbhog-ice-cream",
+  "name": "Rajbhog Ice Cream",
+  "aliases": [
+   "RajBhog Ice-Cream"
+  ],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "rajma-masala",
+  "name": "Rajma Masala",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "rasam",
+  "name": "Rasam",
+  "aliases": [],
+  "archetypeId": "rasam",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "rasgulla",
+  "name": "Rasgulla",
+  "aliases": [],
+  "archetypeId": "syrup_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "rasmalai",
+  "name": "Rasmalai",
+  "aliases": [],
+  "archetypeId": "syrup_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "rava-kesari",
+  "name": "Rava Kesari",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "raw-banana-masala-fry",
+  "name": "Raw Banana Masala Fry",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "red-cabbage-salad",
+  "name": "Red Cabbage Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "red-chawli",
+  "name": "Red Chawli",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "red-sauce",
+  "name": "Red Sauce",
+  "aliases": [],
+  "archetypeId": "pasta_sauce",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "rice",
+  "name": "Rice",
+  "aliases": [],
+  "archetypeId": "plain_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 7
+ },
+ {
+  "id": "rice-kheer",
+  "name": "Rice Kheer",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "rice-papad",
+  "name": "Rice Papad",
+  "aliases": [],
+  "archetypeId": "papad_fried",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 4
+ },
+ {
+  "id": "rogan-josh",
+  "name": "Rogan Josh",
+  "aliases": [],
+  "archetypeId": "mutton_curry",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1,
+  "override": {
+   "kcal": 340,
+   "protein": 20,
+   "carbs": 11.0,
+   "fat": 24
+  }
+ },
+ {
+  "id": "roti",
+  "name": "Roti",
+  "aliases": [],
+  "archetypeId": "roti",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 50
+ },
+ {
+  "id": "saada-baati",
+  "name": "Saada Baati",
+  "aliases": [],
+  "archetypeId": "baati",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sabudana-khichdi",
+  "name": "Sabudana Khichdi",
+  "aliases": [],
+  "archetypeId": "sabudana_khichdi",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sabudana-tikki",
+  "name": "Sabudana Tikki",
+  "aliases": [],
+  "archetypeId": "sabudana_tikki",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "saffron-rice",
+  "name": "Saffron Rice",
+  "aliases": [],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sai-bhaji",
+  "name": "Sai Bhaji",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "salad",
+  "name": "Salad",
+  "aliases": [],
+  "archetypeId": "salad",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 45
+ },
+ {
+  "id": "salted-french-fries",
+  "name": "Salted French Fries",
+  "aliases": [],
+  "archetypeId": "fried_snack",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sambar",
+  "name": "Sambar",
+  "aliases": [
+   "Sambhar"
+  ],
+  "archetypeId": "sambar",
+  "slots": [
+   "breakfast",
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 6
+ },
+ {
+  "id": "samosa-chaat",
+  "name": "Samosa Chaat",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sev-puri",
+  "name": "Sev Puri",
+  "aliases": [],
+  "archetypeId": "chaat",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sev-tamatar",
+  "name": "Sev Tamatar",
+  "aliases": [
+   "Sev Tomato Sabji",
+   "Sev Tomato"
+  ],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2,
+  "override": {
+   "kcal": 250,
+   "protein": 5,
+   "carbs": 19.2,
+   "fat": 17
+  }
+ },
+ {
+  "id": "sewai-kheer",
+  "name": "Sewai Kheer",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "shahi-tukda",
+  "name": "Shahi Tukda",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "shrikhand",
+  "name": "Shrikhand",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "sitaphal-basundi",
+  "name": "Sitaphal Basundi",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "soft-drink",
+  "name": "Soft Drink",
+  "aliases": [
+   "Soft Drink (TBD)",
+   "Coke",
+   "Thums Up",
+   "Coke/Thums Up"
+  ],
+  "archetypeId": "sweet_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "sooji-toast",
+  "name": "Sooji Toast",
+  "aliases": [],
+  "archetypeId": "toast_roll",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "soya-chaap",
+  "name": "Soya Chaap",
+  "aliases": [],
+  "archetypeId": "soya",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "soya-chaap-masala",
+  "name": "Soya Chaap Masala",
+  "aliases": [],
+  "archetypeId": "soya",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "soyabean-masala",
+  "name": "Soyabean Masala",
+  "aliases": [],
+  "archetypeId": "soya",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "spinach-corn-sandwich",
+  "name": "Spinach Corn Sandwich",
+  "aliases": [],
+  "archetypeId": "sandwich",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sprouts-salad",
+  "name": "Sprouts Salad",
+  "aliases": [],
+  "archetypeId": "protein_salad",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "steamed-rice",
+  "name": "Steamed Rice",
+  "aliases": [],
+  "archetypeId": "plain_rice",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 27
+ },
+ {
+  "id": "stuffed-kulcha",
+  "name": "Stuffed Kulcha",
+  "aliases": [],
+  "archetypeId": "naan_kulcha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "stuffed-paneer-chila",
+  "name": "Stuffed Paneer Chila",
+  "aliases": [
+   "Stuffed Paneer Cheela"
+  ],
+  "archetypeId": "cheela",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "sweet-corn-soup",
+  "name": "Sweet Corn Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "tadka-curd-rice",
+  "name": "Tadka Curd Rice",
+  "aliases": [],
+  "archetypeId": "curd_rice_khichdi",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "tandoori-roti",
+  "name": "Tandoori Roti",
+  "aliases": [],
+  "archetypeId": "roti",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "thecha",
+  "name": "Thecha",
+  "aliases": [],
+  "archetypeId": "chutney_rich",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "tiramisu",
+  "name": "Tiramisu",
+  "aliases": [],
+  "archetypeId": "milk_sweet",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "tomato-basil-soup",
+  "name": "Tomato Basil Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "tomato-chutney",
+  "name": "Tomato Chutney",
+  "aliases": [],
+  "archetypeId": "chutney_light",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "tomato-onion-rice",
+  "name": "Tomato Onion Rice",
+  "aliases": [
+   "Tomato Onion Pulao"
+  ],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "tomato-soup",
+  "name": "Tomato Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "toor-dal",
+  "name": "Toor Dal",
+  "aliases": [
+   "Toor Daal"
+  ],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 7
+ },
+ {
+  "id": "triangle-paratha",
+  "name": "Triangle Paratha",
+  "aliases": [],
+  "archetypeId": "plain_paratha",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "vanilla-brownie-ice-cream",
+  "name": "Vanilla Brownie Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "vanilla-ice-cream",
+  "name": "Vanilla Ice Cream",
+  "aliases": [],
+  "archetypeId": "ice_cream",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "veg-biryani",
+  "name": "Veg Biryani",
+  "aliases": [
+   "Veg Biriyani"
+  ],
+  "archetypeId": "veg_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "veg-clear-soup",
+  "name": "Veg Clear Soup",
+  "aliases": [],
+  "archetypeId": "soup",
+  "slots": [
+   "lunch",
+   "dinner"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "veg-gravy",
+  "name": "Veg Gravy",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 5
+ },
+ {
+  "id": "veg-jhalfrezi",
+  "name": "Veg Jhalfrezi",
+  "aliases": [],
+  "archetypeId": "dry_veg",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "veg-keema",
+  "name": "Veg Keema",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "veg-kofta",
+  "name": "Veg Kofta",
+  "aliases": [],
+  "archetypeId": "kofta_malai",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "veg-maggi",
+  "name": "Veg Maggi",
+  "aliases": [],
+  "archetypeId": "maggi",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "veg-pulao",
+  "name": "Veg Pulao",
+  "aliases": [
+   "Veg Pulav",
+   "Pulav",
+   "Pulao"
+  ],
+  "archetypeId": "flavoured_rice",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "veg-stew",
+  "name": "Veg Stew",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "veg-tawa-masala",
+  "name": "Veg Tawa Masala",
+  "aliases": [],
+  "archetypeId": "veg_gravy",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "veg-upma",
+  "name": "Veg Upma",
+  "aliases": [],
+  "archetypeId": "poha_upma",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "vegetable-dum-biryani",
+  "name": "Vegetable Dum Biryani",
+  "aliases": [],
+  "archetypeId": "veg_biryani",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "vermicelli-upma",
+  "name": "Vermicelli Upma",
+  "aliases": [],
+  "archetypeId": "poha_upma",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "virgin-mojito",
+  "name": "Virgin Mojito",
+  "aliases": [],
+  "archetypeId": "sweet_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 3
+ },
+ {
+  "id": "watermelon-juice",
+  "name": "Watermelon Juice",
+  "aliases": [],
+  "archetypeId": "sweet_drink",
+  "slots": [
+   "dessert"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "white-chawli",
+  "name": "White Chawli",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "white-dhokla",
+  "name": "White Dhokla",
+  "aliases": [],
+  "archetypeId": "khaman",
+  "slots": [
+   "snacks"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "white-matar-curry",
+  "name": "White Matar Curry",
+  "aliases": [],
+  "archetypeId": "legume_curry",
+  "slots": [
+   "lunch"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "white-sauce",
+  "name": "White Sauce",
+  "aliases": [],
+  "archetypeId": "pasta_sauce",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 2
+ },
+ {
+  "id": "yellow-dal",
+  "name": "Yellow Dal",
+  "aliases": [],
+  "archetypeId": "thin_dal",
+  "slots": [
+   "dinner"
+  ],
+  "timesOnMenu": 1
+ },
+ {
+  "id": "boiled-egg",
+  "name": "Boiled Egg",
+  "aliases": [],
+  "archetypeId": "boiled_egg",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 0,
+  "pinned": true
+ },
+ {
+  "id": "anda-bhurji",
+  "name": "Anda Bhurji",
+  "aliases": [],
+  "archetypeId": "anda_bhurji",
+  "slots": [
+   "breakfast"
+  ],
+  "timesOnMenu": 0,
+  "pinned": true
+ }
+]

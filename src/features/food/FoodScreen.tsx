@@ -1,13 +1,15 @@
 import { useMemo, useState } from 'react'
 import { useDayLog, useFoodLibrary, useMenuDay, usePinned, useRecentInSlot, useToday } from '../../db/hooks'
-import { OIL_FOOD_ID } from '../../db/food'
-import type { FoodLogEntry } from '../../db/types'
+import { OIL_FOOD_ID, addEntry } from '../../db/food'
+import { db } from '../../db/schema'
+import type { FoodLogEntry, PinnedItem } from '../../db/types'
 import { addDays } from '../../engine/dates'
 import { MEAL_SLOTS, slotForTime, sumMacros, type FoodView, type MealSlot } from '../../engine/food'
 import { searchFoods } from '../../engine/search'
 import { AddFoodSheet } from './AddFoodSheet'
 import { FoodRow } from './FoodRow'
 import { NewDishSheet } from './NewDishSheet'
+import { OffSearch } from './OffSearch'
 import { SLOT_LABELS } from './slots'
 import { SlotLog } from './SlotLog'
 import { UsualBreakfastSheet } from './UsualBreakfastSheet'
@@ -66,6 +68,15 @@ export function FoodScreen() {
     menuBreakfastIds[0] ?? recent?.find((id) => library.byId.get(id)?.source === 'mess' && !pinned.some((p) => p.foodId === id))
 
   const open = (food: FoodView) => setSheet({ kind: 'add', foodId: food.id })
+
+  // Pinned items (eggs, whey) log their default amount in one tap.
+  const pinByFood = new Map<string, PinnedItem>(pinned.map((p) => [p.foodId, p]))
+  const quickFor = (food: FoodView) => {
+    const pin = pinByFood.get(food.id)
+    if (!pin) return undefined
+    const serving = { qty: pin.defaultQty, unit: pin.unit ?? food.units[0]!.unit }
+    return { ...serving, onAdd: () => void addEntry(db, date, slot, food, serving) }
+  }
   const sheetFood =
     sheet?.kind === 'add' ? library.byId.get(sheet.foodId) : sheet?.kind === 'edit' ? library.byId.get(sheet.entry.foodId) : undefined
 
@@ -130,8 +141,9 @@ export function FoodScreen() {
           {results.length > 0 ? (
             <FoodList foods={results} onPick={open} />
           ) : (
-            <p className="px-1 text-sm text-muted">Nothing called "{query.trim()}" yet.</p>
+            <p className="px-1 text-sm text-muted">Nothing called "{query.trim()}" in your library yet.</p>
           )}
+          <OffSearch key={query.trim().toLowerCase()} query={query} onReady={(foodId) => setSheet({ kind: 'add', foodId })} />
           <AddNewButton label={`Add "${query.trim()}" as a new dish`} onClick={() => setSheet({ kind: 'new', name: query })} />
         </>
       ) : (
@@ -151,7 +163,9 @@ export function FoodScreen() {
           {suggestions.menuFoods.length > 0 && (
             <FoodList title={`On the menu · ${SLOT_LABELS[slot].toLowerCase()}`} foods={suggestions.menuFoods} onPick={open} />
           )}
-          {suggestions.pinnedFoods.length > 0 && <FoodList title="Pinned" foods={suggestions.pinnedFoods} onPick={open} />}
+          {suggestions.pinnedFoods.length > 0 && (
+            <FoodList title="Pinned" foods={suggestions.pinnedFoods} onPick={open} quick={quickFor} />
+          )}
           {suggestions.recentFoods.length > 0 && <FoodList title="Recent" foods={suggestions.recentFoods} onPick={open} />}
           {suggestions.common.length > 0 && (
             <FoodList title={`Common at ${SLOT_LABELS[slot].toLowerCase()}`} foods={suggestions.common} onPick={open} />
@@ -207,13 +221,20 @@ function AddNewButton({ label, onClick }: { label: string; onClick: () => void }
   )
 }
 
-function FoodList({ title, foods, onPick }: { title?: string; foods: FoodView[]; onPick: (f: FoodView) => void }) {
+interface FoodListProps {
+  title?: string
+  foods: FoodView[]
+  onPick: (f: FoodView) => void
+  quick?: (f: FoodView) => { qty: number; unit: string; onAdd: () => void } | undefined
+}
+
+function FoodList({ title, foods, onPick, quick }: FoodListProps) {
   return (
     <div>
       {title && <h2 className="mb-1 px-1 text-sm font-medium text-muted">{title}</h2>}
       <ul className="-mx-1 rounded-2xl border border-line bg-card p-1">
         {foods.map((f) => (
-          <FoodRow key={f.id} food={f} onClick={() => onPick(f)} />
+          <FoodRow key={f.id} food={f} onClick={() => onPick(f)} quick={quick?.(f)} />
         ))}
       </ul>
     </div>

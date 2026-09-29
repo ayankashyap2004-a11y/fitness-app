@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   defaultServing,
   entryMacros,
+  formatQty,
   resolveFood,
   resolvePortion,
   searchKeysFor,
@@ -46,6 +47,14 @@ describe('splitUnit', () => {
 
   it('leaves plain units alone', () => {
     expect(splitUnit('2 eggs + gravy')).toEqual({ label: '2 eggs + gravy' })
+  })
+})
+
+describe('formatQty', () => {
+  it('adds × before units that start with a number', () => {
+    expect(formatQty(2, 'katori')).toBe('2 katori')
+    expect(formatQty(1.5, '100 g')).toBe('1.5 × 100 g')
+    expect(formatQty(1, '2 eggs + gravy')).toBe('1 × 2 eggs + gravy')
   })
 })
 

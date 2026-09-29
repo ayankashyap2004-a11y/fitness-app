@@ -2,6 +2,7 @@
 // Dates are local ISO strings: 'YYYY-MM-DD' for days, full ISO for timestamps.
 
 import type { MealSlot } from '../engine/food'
+import type { OffProduct } from '../engine/off'
 import type { ActivityLevel, Goal, Intensity, Macros, Sex } from '../engine/types'
 
 export type { ActivityLevel, Goal, Intensity, Macros, MealSlot, Sex }
@@ -184,4 +185,12 @@ export interface AppMeta {
   persistRequested: boolean
   persistGranted?: boolean
   firstLaunchAt: string
+}
+
+/** Cached Open Food Facts search, so the same search works offline (schema v2). */
+export interface OffSearchCache {
+  /** Normalised query. */
+  query: string
+  fetchedAt: string
+  products: OffProduct[]
 }

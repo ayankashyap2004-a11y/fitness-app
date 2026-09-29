@@ -2,7 +2,7 @@ import { addOil, OIL_FOOD_ID } from '../../db/food'
 import type { FoodLibrary } from '../../db/hooks'
 import { db } from '../../db/schema'
 import type { FoodLogEntry } from '../../db/types'
-import { sumMacros, type MealSlot } from '../../engine/food'
+import { formatQty, sumMacros, type MealSlot } from '../../engine/food'
 import { SLOT_LABELS } from './slots'
 
 interface Props {
@@ -36,7 +36,7 @@ export function SlotLog({ date, slot, entries, library, onEdit }: Props) {
                   <span className="min-w-0">
                     <span className="block truncate">{food?.name ?? e.foodId}</span>
                     <span className="block text-sm text-muted">
-                      {e.qty} {unit}
+                      {formatQty(e.qty, unit)}
                     </span>
                   </span>
                   <span className="shrink-0 text-right text-sm tabular-nums">

@@ -1,0 +1,123 @@
+{
+ "count": 6,
+ "page": 1,
+ "page_size": 8,
+ "products": [
+  {
+   "brands": "Amul",
+   "code": "8901262130301",
+   "product_name": "Amul Pro Whey Protein Malt Beverage",
+   "product_name_en": "Amul Pro Whey Protein Malt Beverage",
+   "quantity": ""
+  },
+  {
+   "brands": "Amul",
+   "code": "8901262110235",
+   "nutriments": {
+    "carbohydrates_100g": 10.8,
+    "carbohydrates_serving": 10.8,
+    "energy-kcal_100g": 400,
+    "energy-kcal_serving": 400,
+    "energy_100g": 1673,
+    "energy_serving": 1670,
+    "fat_100g": 5,
+    "fat_serving": 5,
+    "proteins_100g": 78,
+    "proteins_serving": 78
+   },
+   "nutrition_data": "on",
+   "nutrition_data_per": "100g",
+   "nutrition_data_prepared_per": "100g",
+   "product_name": "Whey Protein",
+   "product_name_en": "Whey Protein",
+   "serving_quantity": 100,
+   "serving_size": "1 portion (100 g)"
+  },
+  {
+   "brands": "Amul",
+   "code": "8901262110266",
+   "nutriments": {
+    "carbohydrates_100g": 10.6,
+    "energy-kcal_100g": 383,
+    "energy_100g": 1602,
+    "fat_100g": 5,
+    "proteins_100g": 74
+   },
+   "nutrition_data": "on",
+   "nutrition_data_per": "100g",
+   "nutrition_data_prepared_per": "100g",
+   "product_name": "Whey Protein",
+   "product_name_en": "Whey Protein"
+  },
+  {
+   "brands": "Amul",
+   "code": "8901262110259",
+   "nutriments": {
+    "carbohydrates_100g": 10.8,
+    "carbohydrates_serving": 3.46,
+    "energy-kcal_100g": 400,
+    "energy-kcal_serving": 128,
+    "energy_100g": 1673,
+    "energy_serving": 535,
+    "fat_100g": 5,
+    "fat_serving": 1.6,
+    "proteins_100g": 78,
+    "proteins_serving": 25
+   },
+   "nutrition_data": "on",
+   "nutrition_data_per": "100g",
+   "nutrition_data_prepared_per": "100g",
+   "product_name": "Whey protein",
+   "product_name_en": "Whey protein",
+   "serving_quantity": 32,
+   "serving_size": "1 Scoop (32 g)"
+  },
+  {
+   "brands": "Amul",
+   "code": "8901262110242",
+   "nutriments": {
+    "carbohydrates_100g": 10.8,
+    "carbohydrates_serving": 3.46,
+    "energy-kcal_100g": 400,
+    "energy-kcal_serving": 128,
+    "energy_100g": 1673,
+    "energy_serving": 535,
+    "fat_100g": 5,
+    "fat_serving": 1.6,
+    "proteins_100g": 78,
+    "proteins_serving": 25
+   },
+   "nutrition_data": "on",
+   "nutrition_data_per": "100g",
+   "nutrition_data_prepared_per": "100g",
+   "product_name": "Whey Protein Lactose Free",
+   "product_name_en": "Whey Protein Lactose Free",
+   "quantity": "",
+   "serving_quantity": 32,
+   "serving_size": "32 g"
+  },
+  {
+   "brands": "Amul",
+   "code": "8901262110303",
+   "nutriments": {
+    "carbohydrates_100g": 10.6,
+    "carbohydrates_serving": 3.6,
+    "energy-kcal_100g": 383,
+    "energy-kcal_serving": 130,
+    "energy-kj_100g": 1623.2,
+    "energy_100g": 1623.2,
+    "energy_serving": 552,
+    "fat_100g": 5,
+    "fat_serving": 1.7,
+    "proteins_100g": 74,
+    "proteins_serving": 25.2
+   },
+   "nutrition_data": "on",
+   "nutrition_data_prepared_per": "100g",
+   "product_name": "Whey Shake",
+   "product_name_en": "Whey Shake",
+   "serving_quantity": 34,
+   "serving_size": "1 packet (34 g)"
+  }
+ ]
+}

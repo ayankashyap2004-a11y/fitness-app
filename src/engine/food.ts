@@ -27,6 +27,11 @@ export function splitUnit(unit: string): { label: string; detail?: string } {
   return detail ? { label: short, detail } : { label: short }
 }
 
+/** '2 katori', but '1 × 100 g' when the unit itself starts with a number. */
+export function formatQty(qty: number, unitLabel: string): string {
+  return /^\d/.test(unitLabel) ? `${qty} × ${unitLabel}` : `${qty} ${unitLabel}`
+}
+
 export function unitOptions(defaultUnit: string, altUnits: readonly AltUnitLike[] = []): UnitOption[] {
   return [
     { unit: defaultUnit, ...splitUnit(defaultUnit), factor: 1 },

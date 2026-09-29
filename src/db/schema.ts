@@ -7,6 +7,7 @@ import type {
   FoodItem,
   FoodLogEntry,
   MenuDay,
+  OffSearchCache,
   PinnedItem,
   Profile,
   ProgressPhoto,
@@ -33,6 +34,7 @@ export class FitnessDB extends Dexie {
   setLogs!: EntityTable<SetLog, 'id'>
   progressPhotos!: EntityTable<ProgressPhoto, 'id'>
   appMeta!: EntityTable<AppMeta, 'id'>
+  offSearches!: EntityTable<OffSearchCache, 'query'>
 
   constructor(name = 'fitness') {
     super(name)
@@ -53,6 +55,10 @@ export class FitnessDB extends Dexie {
       setLogs: '++id, sessionId, exerciseId, [exerciseId+sessionId]',
       progressPhotos: '++id, date, [date+angle]',
       appMeta: 'id',
+    })
+    // v2 (Phase 5): Open Food Facts search cache.
+    this.version(2).stores({
+      offSearches: 'query, fetchedAt',
     })
   }
 }

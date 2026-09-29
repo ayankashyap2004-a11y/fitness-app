@@ -39,9 +39,14 @@ export function AddFoodSheet({ food, date, target, onClose }: Props) {
 
   const badge = food.edited
     ? { text: 'Your values', cls: 'text-accent' }
-    : food.sourced
-      ? { text: '✓ Checked', cls: 'text-accent' }
-      : { text: 'Estimate', cls: 'text-muted' }
+    : food.source === 'off'
+      ? { text: 'From label', cls: 'text-accent' }
+      : food.sourced
+        ? { text: '✓ Checked', cls: 'text-accent' }
+        : food.source === 'personal'
+          ? { text: 'Your values', cls: 'text-accent' }
+          : { text: 'Estimate', cls: 'text-muted' }
+  const origin = { mess: `Mess · ${food.archetypeName}`, off: 'Packaged · Open Food Facts', personal: 'Your food', bundled: 'Library' }[food.source]
 
   return (
     <BottomSheet
@@ -68,7 +73,7 @@ export function AddFoodSheet({ food, date, target, onClose }: Props) {
       }
     >
       <p className="text-sm text-muted">
-        {food.source === 'mess' ? `Mess · ${food.archetypeName}` : 'Library'} · <span className={badge.cls}>{badge.text}</span>
+        {origin} · <span className={badge.cls}>{badge.text}</span>
       </p>
 
       <div className="mt-4 space-y-5">

@@ -25,6 +25,7 @@ describe('FitnessDB schema', () => {
         'foodItems',
         'foodLog',
         'menuDays',
+        'offSearches',
         'pinnedItems',
         'profile',
         'progressPhotos',

@@ -5,6 +5,7 @@ import { db } from '../../db/schema'
 import { ACTIVITY_CHOICES, GOAL_CHOICES } from '../onboarding/options'
 import { EggSplitSettings } from './EggSplitSettings'
 import { MenuSettings } from './MenuSettings'
+import { WheySettings } from './WheySettings'
 import { ProfileEditor } from './ProfileEditor'
 
 export function SettingsScreen() {
@@ -60,6 +61,8 @@ export function SettingsScreen() {
       </div>
 
       <EggSplitSettings />
+
+      <WheySettings />
 
       <MenuSettings today={today} />
 

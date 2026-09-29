@@ -5,6 +5,8 @@ import { FoodScreen } from './features/food/FoodScreen'
 import { WorkoutScreen } from './features/workout/WorkoutScreen'
 import { ProgressScreen } from './features/progress/ProgressScreen'
 import { SettingsScreen } from './features/settings/SettingsScreen'
+import { OnboardingFlow } from './features/onboarding/OnboardingFlow'
+import { useProfile } from './db/hooks'
 
 // Small UI preference only; all real data lives in IndexedDB.
 const TAB_KEY = 'ui.lastTab'
@@ -19,7 +21,7 @@ function readLastTab(): TabId {
   return 'today'
 }
 
-const SCREENS: Record<TabId, () => JSX.Element> = {
+const SCREENS: Record<TabId, () => JSX.Element | null> = {
   today: TodayScreen,
   food: FoodScreen,
   workout: WorkoutScreen,
@@ -39,6 +41,10 @@ export default function App() {
       // ignore
     }
   }
+
+  const profile = useProfile()
+  if (profile === undefined) return null
+  if (profile === null) return <OnboardingFlow />
 
   const Screen = SCREENS[tab]
 

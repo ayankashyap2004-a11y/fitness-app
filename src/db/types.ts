@@ -1,22 +1,14 @@
 // Entity types for the on-device database (PRD §6).
 // Dates are local ISO strings: 'YYYY-MM-DD' for days, full ISO for timestamps.
 
-export type Sex = 'male' | 'female'
-export type ActivityLevel = 'sedentary' | 'light' | 'moderate' | 'very'
-export type Goal = 'fat_loss' | 'muscle_gain' | 'recomp'
-export type Intensity = 'mild' | 'moderate' | 'aggressive'
+import type { ActivityLevel, Goal, Intensity, Macros, Sex } from '../engine/types'
+
+export type { ActivityLevel, Goal, Intensity, Macros, Sex }
 export type MealSlot = 'breakfast' | 'lunch' | 'snacks' | 'dinner' | 'dessert'
 export type TrainingMode = 'gym' | 'home'
 export type PhotoAngle = 'front' | 'side' | 'back'
 export type CardioType = 'walk' | 'run' | 'cycle' | 'swim' | 'sport' | 'other'
 export type FoodSource = 'bundled' | 'personal' | 'off' | 'mess'
-
-export interface Macros {
-  kcal: number
-  protein: number
-  carbs: number
-  fat: number
-}
 
 export interface AltUnit {
   unit: string

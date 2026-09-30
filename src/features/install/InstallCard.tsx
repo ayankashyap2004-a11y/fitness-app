@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button } from '../../components/Button'
-import { promptInstall, useInstallState } from './installPrompt'
+import { isIOS, promptInstall, useInstallState } from './installPrompt'
 
 const DISMISS_KEY = 'ui.installDismissed'
 
@@ -58,20 +58,42 @@ export function InstallCard({ dismissible = false }: Props) {
         )}
       </div>
 
-      {state === 'manual' && showSteps && (
-        <ol className="list-decimal space-y-1 pl-5 text-sm">
-          <li>
-            Make sure this page is open in <strong>Chrome</strong> itself. If you opened the link from WhatsApp or Gmail, tap their menu → <strong>Open in Chrome</strong>.
-          </li>
-          <li>
-            Tap <strong>⋮</strong> (top right) → <strong>Add to Home screen</strong> or <strong>Install app</strong>.
-          </li>
-          <li>
-            Choose <strong>Install</strong>. The icon appears on your home screen and in the app drawer.
-          </li>
-          <li className="text-muted">Incognito tabs can't install apps.</li>
-        </ol>
-      )}
+      {state === 'manual' && showSteps && (isIOS() ? <IOSSteps /> : <AndroidSteps />)}
     </div>
+  )
+}
+
+function AndroidSteps() {
+  return (
+    <ol className="list-decimal space-y-1 pl-5 text-sm">
+      <li>
+        Make sure this page is open in <strong>Chrome</strong> itself. If you opened the link from WhatsApp or Gmail, tap their menu → <strong>Open in Chrome</strong>.
+      </li>
+      <li>
+        Tap <strong>⋮</strong> (top right) → <strong>Add to Home screen</strong> or <strong>Install app</strong>.
+      </li>
+      <li>
+        Choose <strong>Install</strong>. The icon appears on your home screen and in the app drawer.
+      </li>
+      <li className="text-muted">Incognito tabs can't install apps.</li>
+    </ol>
+  )
+}
+
+/** iOS has no install prompt; installing is always manual from the Share menu. */
+function IOSSteps() {
+  return (
+    <ol className="list-decimal space-y-1 pl-5 text-sm">
+      <li>
+        Open this page in <strong>Safari</strong> (or Chrome on iOS 16.4+). If it opened inside Instagram, WhatsApp or similar, use their menu → <strong>Open in Safari</strong>.
+      </li>
+      <li>
+        Tap the <strong>Share</strong> button (square with an arrow ↑).
+      </li>
+      <li>
+        Scroll down and tap <strong>Add to Home Screen</strong>, then <strong>Add</strong>.
+      </li>
+      <li className="text-muted">Private browsing can't add apps. Your data stays on this iPhone; back up from Settings → Backup.</li>
+    </ol>
   )
 }

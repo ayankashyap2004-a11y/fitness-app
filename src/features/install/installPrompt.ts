@@ -33,6 +33,12 @@ export function isStandalone(): boolean {
   return window.matchMedia?.('(display-mode: standalone)').matches || (navigator as Navigator & { standalone?: boolean }).standalone === true
 }
 
+/** iPhone/iPad (including iPadOS, which reports itself as a Mac with touch). */
+export function isIOS(): boolean {
+  if (typeof navigator === 'undefined') return false
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+}
+
 type InstallState = 'installed' | 'ready' | 'manual'
 
 function snapshot(): InstallState {

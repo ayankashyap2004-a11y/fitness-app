@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { registerSW } from 'virtual:pwa-register'
 import App from './App'
+// Registers the install-prompt listener before React renders, so an early event isn't missed.
+import './features/install/installPrompt'
 import { db } from './db/schema'
 import { ensureAppMeta } from './db/persist'
 import { seedLibrary } from './db/seed'

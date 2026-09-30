@@ -15,6 +15,7 @@ export default defineConfig({
       injectRegister: false, // registered manually in main.tsx
       includeAssets: ['favicon.ico', 'apple-touch-icon-180x180.png', 'icon.svg'],
       manifest: {
+        id: './',
         name: 'Fitness',
         short_name: 'Fitness',
         description: 'Personal calorie, food and workout tracker. Works offline.',

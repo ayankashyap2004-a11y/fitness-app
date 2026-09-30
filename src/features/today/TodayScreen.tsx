@@ -6,6 +6,7 @@ import { db } from '../../db/schema'
 import { NextWorkoutCard } from './NextWorkoutCard'
 import { PhotoReminderBanner } from './PhotoReminderBanner'
 import { BackupBanner } from './BackupBanner'
+import { InstallCard } from '../install/InstallCard'
 import { DinnerCard } from './DinnerCard'
 import { WeightQuickLog } from './WeightQuickLog'
 
@@ -48,6 +49,8 @@ export function TodayScreen() {
       {state.status === 'no-weight' && (
         <p className="rounded-2xl border border-line bg-card p-4 text-sm text-muted">Log a weigh-in to see your targets.</p>
       )}
+
+      <InstallCard dismissible />
 
       <NextWorkoutCard />
 

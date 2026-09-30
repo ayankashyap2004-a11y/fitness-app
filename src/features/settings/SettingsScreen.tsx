@@ -8,6 +8,7 @@ import { MenuSettings } from './MenuSettings'
 import { WheySettings } from './WheySettings'
 import { PhotoReminderSettings } from './PhotoReminderSettings'
 import { BackupSettings } from './BackupSettings'
+import { InstallCard } from '../install/InstallCard'
 import { ProfileEditor } from './ProfileEditor'
 
 export function SettingsScreen() {
@@ -61,6 +62,8 @@ export function SettingsScreen() {
           Edit profile
         </button>
       </div>
+
+      <InstallCard />
 
       <BackupSettings />
 

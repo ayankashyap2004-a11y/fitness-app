@@ -5,9 +5,10 @@ import { computeTargets, type Targets } from '../engine/targets'
 import { sevenDayAverage, type AverageWeight } from '../engine/trends'
 import type { Macros } from '../engine/types'
 import { db } from './schema'
-import type { AppMeta, CardioLog, Exercise, FoodLogEntry, MealSlot, PinnedItem, Profile, SetLog, WorkoutSession, WorkoutTemplate } from './types'
+import type { AppMeta, CardioLog, Exercise, ProgressPhoto, WeightLog, FoodLogEntry, MealSlot, PinnedItem, Profile, SetLog, WorkoutSession, WorkoutTemplate } from './types'
 import { activeSession, lastTimeFor } from './workout'
 import { weekSummary, type WeekSummary } from './week'
+import { exerciseHistory, trainedExercises, type HistoryEntry } from './history'
 
 export function useToday(): string {
   return toISODate(new Date())
@@ -156,4 +157,20 @@ export function useWeekSummary(today: string): WeekSummary | undefined {
 
 export function useRecentCardio(limit = 5): CardioLog[] | undefined {
   return useLiveQuery(async () => (await db.cardioLogs.orderBy('date').reverse().limit(limit).toArray()), [limit])
+}
+
+export function useWeightLogs(): WeightLog[] | undefined {
+  return useLiveQuery(() => db.weightLogs.orderBy('date').toArray())
+}
+
+export function usePhotos(): ProgressPhoto[] | undefined {
+  return useLiveQuery(() => db.progressPhotos.orderBy('date').toArray())
+}
+
+export function useTrainedExercises(): string[] | undefined {
+  return useLiveQuery(() => trainedExercises(db))
+}
+
+export function useExerciseHistory(exerciseId: string | null): HistoryEntry[] | undefined {
+  return useLiveQuery(async () => (exerciseId ? exerciseHistory(db, exerciseId) : []), [exerciseId])
 }

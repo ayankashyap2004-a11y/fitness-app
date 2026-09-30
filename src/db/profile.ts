@@ -47,3 +47,7 @@ export async function updateProfile(db: FitnessDB, d: ProfileDraft) {
 export async function logWeight(db: FitnessDB, date: string, weightKg: number) {
   await db.weightLogs.put({ date, weightKg })
 }
+
+export async function deleteWeight(db: FitnessDB, date: string) {
+  await db.weightLogs.delete(date)
+}

@@ -4,11 +4,11 @@
 import type { CardioType, PickleballIntensity } from '../engine/cardio'
 import type { MealSlot } from '../engine/food'
 import type { OffProduct } from '../engine/off'
+import type { PhotoAngle } from '../engine/photos'
 import type { DayTemplate, ExerciseDef, LoggedSet, PlannedExercise, TrainingMode } from '../engine/workout'
 import type { ActivityLevel, Goal, Intensity, Macros, Sex } from '../engine/types'
 
-export type { ActivityLevel, CardioType, Goal, Intensity, Macros, MealSlot, Sex, TrainingMode }
-export type PhotoAngle = 'front' | 'side' | 'back'
+export type { ActivityLevel, CardioType, Goal, Intensity, Macros, MealSlot, PhotoAngle, Sex, TrainingMode }
 export type FoodSource = 'bundled' | 'personal' | 'off' | 'mess'
 
 export interface AltUnit {
@@ -170,6 +170,10 @@ export interface AppMeta {
   deloadSkips: number
   /** Monday ('YYYY-MM-DD') of a week whose due deload was skipped. */
   deloadSkippedWeek?: string
+  /** Weekly progress-photo reminder (banner, plus a notification on open if permitted). */
+  photoReminder?: boolean
+  /** Last date a reminder notification was shown, so it fires at most once a day. */
+  photoReminderNotifiedOn?: string
   /** Hash of the seed JSON last loaded. */
   seedVersion?: string
   persistRequested: boolean

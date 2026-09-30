@@ -6,6 +6,7 @@ import { ACTIVITY_CHOICES, GOAL_CHOICES } from '../onboarding/options'
 import { EggSplitSettings } from './EggSplitSettings'
 import { MenuSettings } from './MenuSettings'
 import { WheySettings } from './WheySettings'
+import { PhotoReminderSettings } from './PhotoReminderSettings'
 import { ProfileEditor } from './ProfileEditor'
 
 export function SettingsScreen() {
@@ -63,6 +64,8 @@ export function SettingsScreen() {
       <EggSplitSettings />
 
       <WheySettings />
+
+      <PhotoReminderSettings />
 
       <MenuSettings today={today} />
 

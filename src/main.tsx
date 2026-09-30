@@ -5,12 +5,15 @@ import App from './App'
 import { db } from './db/schema'
 import { ensureAppMeta } from './db/persist'
 import { seedLibrary } from './db/seed'
+import { toISODate } from './engine/dates'
+import { notifyPhotoReminderIfDue } from './features/progress/photoReminder'
 import './index.css'
 
 registerSW({ immediate: true })
 
 ensureAppMeta(db)
   .then(() => seedLibrary(db))
+  .then(() => notifyPhotoReminderIfDue(db, toISODate(new Date())))
   .catch((err: unknown) => console.error('Storage setup failed', err))
 
 createRoot(document.getElementById('root')!).render(

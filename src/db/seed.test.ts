@@ -4,7 +4,9 @@ import { resolveFood } from '../engine/food'
 import { searchFoods } from '../engine/search'
 import { ensureAppMeta } from './persist'
 import { FitnessDB } from './schema'
-import { DEFAULT_PINNED_QTY, SEED, hashSeed, seedLibrary } from './seed'
+import { DEFAULT_PINNED_QTY, hashSeed, loadSeed, seedLibrary } from './seed'
+
+const SEED = await loadSeed()
 
 let db: FitnessDB
 

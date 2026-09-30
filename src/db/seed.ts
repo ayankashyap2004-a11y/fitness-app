@@ -1,8 +1,3 @@
-import archetypesJson from '../data/archetypes.json'
-import bundledJson from '../data/bundled-foods.json'
-import dishesJson from '../data/mess-dishes.json'
-import exercisesJson from '../data/exercises.json'
-import splitJson from '../data/split.json'
 import { searchKeysFor } from '../engine/food'
 import type { FitnessDB } from './schema'
 import type { AltUnit, Archetype, Exercise, FoodItem, Macros, MealSlot, WorkoutTemplate } from './types'
@@ -36,12 +31,25 @@ export interface SeedData {
   split: WorkoutTemplate[]
 }
 
-export const SEED: SeedData = {
-  archetypes: archetypesJson as Archetype[],
-  dishes: dishesJson as SeedDish[],
-  bundled: bundledJson as SeedBundled[],
-  exercises: exercisesJson as Exercise[],
-  split: splitJson as WorkoutTemplate[],
+/**
+ * The seed JSON, loaded on demand so it isn't part of the first-paint bundle. The service
+ * worker precaches this chunk, so it's still available offline.
+ */
+export async function loadSeed(): Promise<SeedData> {
+  const [archetypes, dishes, bundled, exercises, split] = await Promise.all([
+    import('../data/archetypes.json'),
+    import('../data/mess-dishes.json'),
+    import('../data/bundled-foods.json'),
+    import('../data/exercises.json'),
+    import('../data/split.json'),
+  ])
+  return {
+    archetypes: archetypes.default as Archetype[],
+    dishes: dishes.default as SeedDish[],
+    bundled: bundled.default as SeedBundled[],
+    exercises: exercises.default as Exercise[],
+    split: split.default as WorkoutTemplate[],
+  }
 }
 
 /** Default eggs for pinned breakfast items (2 boiled + 2-egg bhurji). Editable in Settings. */
@@ -65,7 +73,8 @@ const USER_FIELDS = ['userOverride', 'lastQty', 'lastUnit'] as const
  * Loads archetypes, mess dishes, bundled foods, exercises and the split on first run, and again whenever the
  * seed JSON changes. User edits and last-used quantities survive a re-seed.
  */
-export async function seedLibrary(db: FitnessDB, data: SeedData = SEED, now = new Date()): Promise<boolean> {
+export async function seedLibrary(db: FitnessDB, seed?: SeedData, now = new Date()): Promise<boolean> {
+  const data = seed ?? (await loadSeed())
   const version = hashSeed(data)
   const meta = await db.appMeta.get(1)
   if (meta?.seedVersion === version) return false
@@ -106,7 +115,7 @@ export async function seedLibrary(db: FitnessDB, data: SeedData = SEED, now = ne
   await db.transaction('rw', [db.archetypes, db.foodItems, db.pinnedItems, db.exercises, db.workoutTemplates, db.appMeta], async () => {
     await db.archetypes.bulkPut(data.archetypes)
     await db.exercises.bulkPut(data.exercises)
-    // The split is the user's to edit: only seed it once. 'Reset day' restores from SEED.
+    // The split is the user's to edit: only seed it once. 'Reset day' restores from the seed.
     if ((await db.workoutTemplates.count()) === 0) await db.workoutTemplates.bulkPut(data.split)
 
     const existing = await db.foodItems.bulkGet(fresh.map((f) => f.id))

@@ -1,10 +1,7 @@
-import { useState, type JSX } from 'react'
+import { lazy, Suspense, useState, type ComponentType } from 'react'
 import { BottomTabBar, TABS, type TabId } from './components/BottomTabBar'
 import { TodayScreen } from './features/today/TodayScreen'
 import { FoodScreen } from './features/food/FoodScreen'
-import { WorkoutScreen } from './features/workout/WorkoutScreen'
-import { ProgressScreen } from './features/progress/ProgressScreen'
-import { SettingsScreen } from './features/settings/SettingsScreen'
 import { OnboardingFlow } from './features/onboarding/OnboardingFlow'
 import { useProfile } from './db/hooks'
 import { NavContext } from './components/nav'
@@ -22,7 +19,13 @@ function readLastTab(): TabId {
   return 'today'
 }
 
-const SCREENS: Record<TabId, () => JSX.Element | null> = {
+// Heavier tabs (uPlot charts, zip backup, workouts) load when first opened. The service
+// worker precaches every chunk, so they still work offline.
+const WorkoutScreen = lazy(() => import('./features/workout/WorkoutScreen').then((m) => ({ default: m.WorkoutScreen })))
+const ProgressScreen = lazy(() => import('./features/progress/ProgressScreen').then((m) => ({ default: m.ProgressScreen })))
+const SettingsScreen = lazy(() => import('./features/settings/SettingsScreen').then((m) => ({ default: m.SettingsScreen })))
+
+const SCREENS: Record<TabId, ComponentType> = {
   today: TodayScreen,
   food: FoodScreen,
   workout: WorkoutScreen,
@@ -53,7 +56,9 @@ export default function App() {
     <div className="mx-auto min-h-full max-w-md pt-[env(safe-area-inset-top)] pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
       <main>
         <NavContext.Provider value={changeTab}>
-          <Screen />
+          <Suspense fallback={null}>
+            <Screen />
+          </Suspense>
         </NavContext.Provider>
       </main>
       <BottomTabBar active={tab} onChange={changeTab} />

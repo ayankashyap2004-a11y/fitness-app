@@ -3,7 +3,7 @@ import { deloadSets, isDeloadWeek } from '../engine/deload'
 import { lastSessionSets, nextDayIndex, planForMode, type TrainingMode } from '../engine/workout'
 import { getDeloadStatus } from './deload'
 import type { FitnessDB } from './schema'
-import { SEED } from './seed'
+import { loadSeed } from './seed'
 import type { SetLog, WorkoutSession, WorkoutTemplate } from './types'
 
 export async function activeSession(db: FitnessDB): Promise<WorkoutSession | undefined> {
@@ -129,6 +129,6 @@ export async function saveTemplate(db: FitnessDB, day: WorkoutTemplate) {
 }
 
 export async function resetTemplate(db: FitnessDB, dayIndex: number) {
-  const original = SEED.split.find((d) => d.dayIndex === dayIndex)
+  const original = (await loadSeed()).split.find((d) => d.dayIndex === dayIndex)
   if (original) await db.workoutTemplates.put(structuredClone(original))
 }

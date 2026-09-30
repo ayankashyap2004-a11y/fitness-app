@@ -5,6 +5,7 @@ import { useConsumed, useTargets, useToday } from '../../db/hooks'
 import { db } from '../../db/schema'
 import { NextWorkoutCard } from './NextWorkoutCard'
 import { PhotoReminderBanner } from './PhotoReminderBanner'
+import { BackupBanner } from './BackupBanner'
 import { DinnerCard } from './DinnerCard'
 import { WeightQuickLog } from './WeightQuickLog'
 
@@ -51,6 +52,8 @@ export function TodayScreen() {
       <NextWorkoutCard />
 
       <PhotoReminderBanner today={today} />
+
+      <BackupBanner today={today} />
 
       {(state.status === 'ready' || state.status === 'no-weight') && (
         <WeightQuickLog today={today} loggedToday={todayLog?.weightKg} />

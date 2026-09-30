@@ -7,6 +7,7 @@ import { EggSplitSettings } from './EggSplitSettings'
 import { MenuSettings } from './MenuSettings'
 import { WheySettings } from './WheySettings'
 import { PhotoReminderSettings } from './PhotoReminderSettings'
+import { BackupSettings } from './BackupSettings'
 import { ProfileEditor } from './ProfileEditor'
 
 export function SettingsScreen() {
@@ -61,6 +62,8 @@ export function SettingsScreen() {
         </button>
       </div>
 
+      <BackupSettings />
+
       <EggSplitSettings />
 
       <WheySettings />
@@ -77,7 +80,6 @@ export function SettingsScreen() {
         />
       </dl>
 
-      <p className="px-1 text-xs text-muted">Backup and reminders arrive in Phase 9.</p>
     </section>
   )
 }

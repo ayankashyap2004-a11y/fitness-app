@@ -1,14 +1,14 @@
 // Entity types for the on-device database (PRD §6).
 // Dates are local ISO strings: 'YYYY-MM-DD' for days, full ISO for timestamps.
 
+import type { CardioType, PickleballIntensity } from '../engine/cardio'
 import type { MealSlot } from '../engine/food'
 import type { OffProduct } from '../engine/off'
 import type { DayTemplate, ExerciseDef, LoggedSet, PlannedExercise, TrainingMode } from '../engine/workout'
 import type { ActivityLevel, Goal, Intensity, Macros, Sex } from '../engine/types'
 
-export type { ActivityLevel, Goal, Intensity, Macros, MealSlot, Sex, TrainingMode }
+export type { ActivityLevel, CardioType, Goal, Intensity, Macros, MealSlot, Sex, TrainingMode }
 export type PhotoAngle = 'front' | 'side' | 'back'
-export type CardioType = 'walk' | 'run' | 'cycle' | 'swim' | 'sport' | 'other'
 export type FoodSource = 'bundled' | 'personal' | 'off' | 'mess'
 
 export interface AltUnit {
@@ -134,6 +134,13 @@ export interface CardioLog {
   type: CardioType
   durationMin: number
   distanceKm?: number
+  /** Walk/run: treadmill speed and incline. */
+  speedKmh?: number
+  inclinePct?: number
+  /** Pickleball. */
+  intensity?: PickleballIntensity
+  /** Estimated kcal burned at log time (display only; never added to the target). */
+  kcalEstimate?: number
   note?: string
 }
 
@@ -157,8 +164,12 @@ export interface AppMeta {
   lastBackupDate?: string
   /** Next dayIndex in the split rotation. */
   splitPointer: number
+  /** Unused since Phase 7: deload state is derived from session history (engine/deload). */
   weeksSinceDeload: number
+  /** Unused since Phase 7. */
   deloadSkips: number
+  /** Monday ('YYYY-MM-DD') of a week whose due deload was skipped. */
+  deloadSkippedWeek?: string
   /** Hash of the seed JSON last loaded. */
   seedVersion?: string
   persistRequested: boolean

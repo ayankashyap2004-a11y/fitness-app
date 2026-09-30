@@ -1,3 +1,4 @@
+import type { CardioType } from '../../engine/cardio'
 import type { Muscle, TrainingMode } from '../../engine/workout'
 
 export const MUSCLE_LABELS: Record<Muscle, string> = {
@@ -16,3 +17,13 @@ export const MUSCLE_LABELS: Record<Muscle, string> = {
 }
 
 export const MODE_LABELS: Record<TrainingMode, string> = { gym: 'Gym', home: 'Home' }
+
+export const CARDIO_LABELS: Record<CardioType, string> = {
+  walk: 'Walk',
+  run: 'Run',
+  pickleball: 'Pickleball',
+  cycle: 'Cycle',
+  swim: 'Swim',
+  sport: 'Sport',
+  other: 'Other',
+}

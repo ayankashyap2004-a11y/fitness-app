@@ -1,5 +1,7 @@
 import { toISODate } from '../engine/dates'
+import { deloadSets, isDeloadWeek } from '../engine/deload'
 import { lastSessionSets, nextDayIndex, planForMode, type TrainingMode } from '../engine/workout'
+import { getDeloadStatus } from './deload'
 import type { FitnessDB } from './schema'
 import { SEED } from './seed'
 import type { SetLog, WorkoutSession, WorkoutTemplate } from './types'
@@ -8,22 +10,28 @@ export async function activeSession(db: FitnessDB): Promise<WorkoutSession | und
   return db.workoutSessions.filter((s) => !s.completed).first()
 }
 
-/** Starts the given day. If a session is already running, returns it instead of starting another. */
+/**
+ * Starts the given day. In a deload week the same exercises are planned at half the sets.
+ * If a session is already running, returns it instead of starting another.
+ */
 export async function startSession(db: FitnessDB, dayIndex: number, mode: TrainingMode, now = new Date()): Promise<number> {
-  return db.transaction('rw', db.workoutSessions, db.workoutTemplates, async () => {
+  return db.transaction('rw', db.workoutSessions, db.workoutTemplates, db.appMeta, async () => {
     const running = await activeSession(db)
     if (running?.id !== undefined) return running.id
     const day = await db.workoutTemplates.get(dayIndex)
     if (!day) throw new Error(`No template for day ${dayIndex}`)
+    const date = toISODate(now)
+    const isDeload = isDeloadWeek(await getDeloadStatus(db, date))
+    const plan = planForMode(day, mode)
     const session: WorkoutSession = {
-      date: toISODate(now),
+      date,
       templateDay: dayIndex,
       dayName: day.name,
       mode,
       startedAt: now.toISOString(),
-      isDeload: false,
+      isDeload,
       completed: false,
-      plan: planForMode(day, mode),
+      plan: isDeload ? plan.map((p) => ({ ...p, sets: deloadSets(p.sets) })) : plan,
     }
     return (await db.workoutSessions.add(session)) as number
   })

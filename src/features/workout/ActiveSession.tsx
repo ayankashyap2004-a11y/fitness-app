@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Button } from '../../components/Button'
-import { useExercises, useLastTime, useSessionSets } from '../../db/hooks'
+import { useExercises, useLastTime, useSessionSets, useToday } from '../../db/hooks'
 import { db } from '../../db/schema'
 import type { SetLog, WorkoutSession } from '../../db/types'
 import { discardSession, finishSession } from '../../db/workout'
 import { formatClock, restAfter, type PlannedExercise } from '../../engine/workout'
+import { CardioSheet } from './CardioSheet'
 import { ExerciseCard } from './ExerciseCard'
 import { MODE_LABELS } from './labels'
 import { RestBar } from './RestBar'
@@ -26,6 +27,8 @@ export function ActiveSession({ session, onFinished }: Props) {
   const timer = useRestTimer()
   const [now, setNow] = useState(() => Date.now())
   const [confirmDiscard, setConfirmDiscard] = useState(false)
+  const [loggingCardio, setLoggingCardio] = useState(false)
+  const today = useToday()
 
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000)
@@ -76,6 +79,7 @@ export function ActiveSession({ session, onFinished }: Props) {
         <div>
           <h1 className="text-xl font-semibold">
             {session.dayName} · {MODE_LABELS[session.mode]}
+            {session.isDeload && <span className="ml-2 rounded-md bg-amber-400/15 px-1.5 py-0.5 align-middle text-xs font-medium text-amber-300">Deload · half sets</span>}
           </h1>
           <p className="text-sm text-muted tabular-nums">
             {formatClock(elapsed)} · {sets.length} of {planned} sets
@@ -96,6 +100,14 @@ export function ActiveSession({ session, onFinished }: Props) {
           card(g.items[0]!)
         ),
       )}
+
+      <button
+        type="button"
+        onClick={() => setLoggingCardio(true)}
+        className="flex min-h-12 w-full items-center gap-2 rounded-2xl border border-dashed border-line px-4 text-left text-accent"
+      >
+        <span className="text-xl leading-none">+</span> Log cardio (e.g. treadmill warm-up or finisher)
+      </button>
 
       <div className="pt-2 pb-4">
         {confirmDiscard ? (
@@ -123,6 +135,7 @@ export function ActiveSession({ session, onFinished }: Props) {
       </div>
 
       <RestBar timer={timer} />
+      {loggingCardio && <CardioSheet today={today} onClose={() => setLoggingCardio(false)} />}
     </section>
   )
 }

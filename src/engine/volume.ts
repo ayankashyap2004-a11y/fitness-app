@@ -16,3 +16,35 @@ export function fractionalVolume(items: readonly VolumeItem[]): Partial<Record<M
   }
   return out
 }
+
+export interface MuscleLookup {
+  (exerciseId: string): { primary: Muscle[]; secondary: Muscle[] } | undefined
+}
+
+/**
+ * The week's planned volume from the split (gym versions, as in PRD §4.4). In a deload
+ * week, pass the halving function so the plan matches what's actually prescribed.
+ */
+export function plannedWeekly(
+  days: readonly { exercises: readonly { gymId: string; sets: number }[] }[],
+  muscles: MuscleLookup,
+  adjustSets: (sets: number) => number = (s) => s,
+): Partial<Record<Muscle, number>> {
+  const items: VolumeItem[] = []
+  for (const d of days)
+    for (const e of d.exercises) {
+      const m = muscles(e.gymId)
+      if (m) items.push({ muscles: m, sets: adjustSets(e.sets) })
+    }
+  return fractionalVolume(items)
+}
+
+/** The week's actual volume: every logged set counts once for its exercise. */
+export function actualWeekly(sets: readonly { exerciseId: string }[], muscles: MuscleLookup): Partial<Record<Muscle, number>> {
+  const items: VolumeItem[] = []
+  for (const s of sets) {
+    const m = muscles(s.exerciseId)
+    if (m) items.push({ muscles: m, sets: 1 })
+  }
+  return fractionalVolume(items)
+}

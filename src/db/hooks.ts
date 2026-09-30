@@ -5,8 +5,9 @@ import { computeTargets, type Targets } from '../engine/targets'
 import { sevenDayAverage, type AverageWeight } from '../engine/trends'
 import type { Macros } from '../engine/types'
 import { db } from './schema'
-import type { AppMeta, Exercise, FoodLogEntry, MealSlot, PinnedItem, Profile, SetLog, WorkoutSession, WorkoutTemplate } from './types'
+import type { AppMeta, CardioLog, Exercise, FoodLogEntry, MealSlot, PinnedItem, Profile, SetLog, WorkoutSession, WorkoutTemplate } from './types'
 import { activeSession, lastTimeFor } from './workout'
+import { weekSummary, type WeekSummary } from './week'
 
 export function useToday(): string {
   return toISODate(new Date())
@@ -147,4 +148,12 @@ export function useRecentSessions(limit = 5): WorkoutSession[] | undefined {
     const done = await db.workoutSessions.filter((s) => s.completed).toArray()
     return done.sort((a, b) => b.startedAt.localeCompare(a.startedAt)).slice(0, limit)
   }, [limit])
+}
+
+export function useWeekSummary(today: string): WeekSummary | undefined {
+  return useLiveQuery(() => weekSummary(db, today), [today])
+}
+
+export function useRecentCardio(limit = 5): CardioLog[] | undefined {
+  return useLiveQuery(async () => (await db.cardioLogs.orderBy('date').reverse().limit(limit).toArray()), [limit])
 }

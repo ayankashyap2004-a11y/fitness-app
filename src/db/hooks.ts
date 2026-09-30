@@ -5,7 +5,8 @@ import { computeTargets, type Targets } from '../engine/targets'
 import { sevenDayAverage, type AverageWeight } from '../engine/trends'
 import type { Macros } from '../engine/types'
 import { db } from './schema'
-import type { FoodLogEntry, MealSlot, PinnedItem, Profile } from './types'
+import type { AppMeta, Exercise, FoodLogEntry, MealSlot, PinnedItem, Profile, SetLog, WorkoutSession, WorkoutTemplate } from './types'
+import { activeSession, lastTimeFor } from './workout'
 
 export function useToday(): string {
   return toISODate(new Date())
@@ -109,4 +110,41 @@ export function useMenuRange(): { first: string; last: string } | null | undefin
     const last = await db.menuDays.orderBy('date').last()
     return first && last ? { first: first.date, last: last.date } : null
   })
+}
+
+/** undefined while loading, null when no session is running. */
+export function useActiveSession(): WorkoutSession | null | undefined {
+  return useLiveQuery(async () => (await activeSession(db)) ?? null)
+}
+
+export function useTemplates(): WorkoutTemplate[] | undefined {
+  return useLiveQuery(() => db.workoutTemplates.orderBy('dayIndex').toArray())
+}
+
+export function useExercises(): Map<string, Exercise> | undefined {
+  return useLiveQuery(async () => new Map((await db.exercises.toArray()).map((e) => [e.id, e])))
+}
+
+export function useAppMeta(): AppMeta | undefined {
+  return useLiveQuery(() => db.appMeta.get(1))
+}
+
+export function useSessionSets(sessionId: number | undefined): SetLog[] | undefined {
+  return useLiveQuery(
+    async () => (sessionId === undefined ? [] : db.setLogs.where('sessionId').equals(sessionId).toArray()),
+    [sessionId],
+  )
+}
+
+/** Last completed session's sets per exercise (display only). */
+export function useLastTime(exerciseIds: readonly string[], excludeSessionId?: number): Map<string, SetLog[]> | undefined {
+  const key = exerciseIds.join('|')
+  return useLiveQuery(() => lastTimeFor(db, exerciseIds, excludeSessionId), [key, excludeSessionId])
+}
+
+export function useRecentSessions(limit = 5): WorkoutSession[] | undefined {
+  return useLiveQuery(async () => {
+    const done = await db.workoutSessions.filter((s) => s.completed).toArray()
+    return done.sort((a, b) => b.startedAt.localeCompare(a.startedAt)).slice(0, limit)
+  }, [limit])
 }

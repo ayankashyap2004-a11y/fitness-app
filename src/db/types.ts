@@ -3,10 +3,10 @@
 
 import type { MealSlot } from '../engine/food'
 import type { OffProduct } from '../engine/off'
+import type { DayTemplate, ExerciseDef, LoggedSet, PlannedExercise, TrainingMode } from '../engine/workout'
 import type { ActivityLevel, Goal, Intensity, Macros, Sex } from '../engine/types'
 
-export type { ActivityLevel, Goal, Intensity, Macros, MealSlot, Sex }
-export type TrainingMode = 'gym' | 'home'
+export type { ActivityLevel, Goal, Intensity, Macros, MealSlot, Sex, TrainingMode }
 export type PhotoAngle = 'front' | 'side' | 'back'
 export type CardioType = 'walk' | 'run' | 'cycle' | 'swim' | 'sport' | 'other'
 export type FoodSource = 'bundled' | 'personal' | 'off' | 'mess'
@@ -107,41 +107,25 @@ export interface FoodLogEntry {
   createdAt: string
 }
 
-export interface Exercise {
-  id: string
-  name: string
-  muscles: { primary: string[]; secondary: string[] }
-  equipment: TrainingMode
-  howTo: string[]
-  cues: string[]
-  mistakes: string[]
-  /** Gym ↔ home counterpart. */
-  swapId?: string
-}
+export type Exercise = ExerciseDef
 
-export interface TemplateExercise {
-  exerciseId: string
-  sets: number
-  repRange: [number, number]
-  rir: string
-  restSec: number
-}
-
-export interface WorkoutTemplate {
-  dayIndex: number
-  name: string
-  exercises: TemplateExercise[]
-}
+export type WorkoutTemplate = DayTemplate
 
 export interface WorkoutSession {
   id?: number
   date: string
   templateDay: number
+  dayName: string
   mode: TrainingMode
   startedAt: string
+  endedAt?: string
   durationSec?: number
   isDeload: boolean
   completed: boolean
+  /** Snapshot of the day's plan at start, so later template edits don't rewrite history. */
+  plan: PlannedExercise[]
+  /** Per-exercise notes, keyed by plan key. */
+  notes?: Record<string, string>
 }
 
 export interface CardioLog {
@@ -153,15 +137,10 @@ export interface CardioLog {
   note?: string
 }
 
-export interface SetLog {
+export interface SetLog extends LoggedSet {
   id?: number
-  sessionId: number
-  exerciseId: string
-  setNo: number
-  weightKg: number
-  reps: number
-  rir?: 0 | 1 | 2 | 3
-  note?: string
+  /** Which plan entry this set belongs to within the session. */
+  planKey: string
   loggedAt: string
 }
 

@@ -7,6 +7,7 @@ import { ProgressScreen } from './features/progress/ProgressScreen'
 import { SettingsScreen } from './features/settings/SettingsScreen'
 import { OnboardingFlow } from './features/onboarding/OnboardingFlow'
 import { useProfile } from './db/hooks'
+import { NavContext } from './components/nav'
 
 // Small UI preference only; all real data lives in IndexedDB.
 const TAB_KEY = 'ui.lastTab'
@@ -51,7 +52,9 @@ export default function App() {
   return (
     <div className="mx-auto min-h-full max-w-md pt-[env(safe-area-inset-top)] pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
       <main>
-        <Screen />
+        <NavContext.Provider value={changeTab}>
+          <Screen />
+        </NavContext.Provider>
       </main>
       <BottomTabBar active={tab} onChange={changeTab} />
     </div>

@@ -1,9 +1,11 @@
 import archetypesJson from '../data/archetypes.json'
 import bundledJson from '../data/bundled-foods.json'
 import dishesJson from '../data/mess-dishes.json'
+import exercisesJson from '../data/exercises.json'
+import splitJson from '../data/split.json'
 import { searchKeysFor } from '../engine/food'
 import type { FitnessDB } from './schema'
-import type { AltUnit, Archetype, FoodItem, Macros, MealSlot } from './types'
+import type { AltUnit, Archetype, Exercise, FoodItem, Macros, MealSlot, WorkoutTemplate } from './types'
 
 interface SeedDish {
   id: string
@@ -30,12 +32,16 @@ export interface SeedData {
   archetypes: Archetype[]
   dishes: SeedDish[]
   bundled: SeedBundled[]
+  exercises: Exercise[]
+  split: WorkoutTemplate[]
 }
 
 export const SEED: SeedData = {
   archetypes: archetypesJson as Archetype[],
   dishes: dishesJson as SeedDish[],
   bundled: bundledJson as SeedBundled[],
+  exercises: exercisesJson as Exercise[],
+  split: splitJson as WorkoutTemplate[],
 }
 
 /** Default eggs for pinned breakfast items (2 boiled + 2-egg bhurji). Editable in Settings. */
@@ -56,7 +62,7 @@ export function hashSeed(data: SeedData): string {
 const USER_FIELDS = ['userOverride', 'lastQty', 'lastUnit'] as const
 
 /**
- * Loads archetypes, mess dishes and bundled foods on first run, and again whenever the
+ * Loads archetypes, mess dishes, bundled foods, exercises and the split on first run, and again whenever the
  * seed JSON changes. User edits and last-used quantities survive a re-seed.
  */
 export async function seedLibrary(db: FitnessDB, data: SeedData = SEED, now = new Date()): Promise<boolean> {
@@ -97,8 +103,11 @@ export async function seedLibrary(db: FitnessDB, data: SeedData = SEED, now = ne
     ),
   ]
 
-  await db.transaction('rw', [db.archetypes, db.foodItems, db.pinnedItems, db.appMeta], async () => {
+  await db.transaction('rw', [db.archetypes, db.foodItems, db.pinnedItems, db.exercises, db.workoutTemplates, db.appMeta], async () => {
     await db.archetypes.bulkPut(data.archetypes)
+    await db.exercises.bulkPut(data.exercises)
+    // The split is the user's to edit: only seed it once. 'Reset day' restores from SEED.
+    if ((await db.workoutTemplates.count()) === 0) await db.workoutTemplates.bulkPut(data.split)
 
     const existing = await db.foodItems.bulkGet(fresh.map((f) => f.id))
     const merged = fresh.map((f, i) => {

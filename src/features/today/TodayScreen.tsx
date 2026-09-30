@@ -3,7 +3,8 @@ import { MacroBar } from '../../components/MacroBar'
 import { TargetNotes } from '../../components/TargetNotes'
 import { useConsumed, useTargets, useToday } from '../../db/hooks'
 import { db } from '../../db/schema'
-import { TonightCard } from './TonightCard'
+import { NextWorkoutCard } from './NextWorkoutCard'
+import { DinnerCard } from './DinnerCard'
 import { WeightQuickLog } from './WeightQuickLog'
 
 export function TodayScreen() {
@@ -38,13 +39,15 @@ export function TodayScreen() {
             </p>
           </div>
           <TargetNotes targets={state.targets} />
-          <TonightCard today={today} proteinTarget={state.targets.protein} />
+          <DinnerCard today={today} proteinTarget={state.targets.protein} />
         </>
       )}
 
       {state.status === 'no-weight' && (
         <p className="rounded-2xl border border-line bg-card p-4 text-sm text-muted">Log a weigh-in to see your targets.</p>
       )}
+
+      <NextWorkoutCard />
 
       {(state.status === 'ready' || state.status === 'no-weight') && (
         <WeightQuickLog today={today} loggedToday={todayLog?.weightKg} />

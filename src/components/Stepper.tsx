@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { QTY_STEP, snapQty } from '../engine/food'
+import { QTY_STEP } from '../engine/food'
 import { parseDecimal } from '../engine/profile'
 
 interface Props {
@@ -8,17 +8,21 @@ interface Props {
   label: string
   /** Lowest allowed value; 0 lets a row be skipped. */
   min?: number
+  max?: number
+  /** Food quantities use 0.5 (CLAUDE.md); counts like sets use 1. */
+  step?: number
   size?: 'md' | 'sm'
 }
 
-/** − / + in 0.5 steps with tap-to-type. */
-export function Stepper({ value, onChange, label, min = QTY_STEP, size = 'md' }: Props) {
+/** − / + in fixed steps (0.5 by default) with tap-to-type. */
+export function Stepper({ value, onChange, label, min = QTY_STEP, max = Infinity, step = QTY_STEP, size = 'md' }: Props) {
+  const snap = (n: number) => Math.min(max, Math.max(min, Math.round(n / step) * step))
   const [text, setText] = useState(String(value))
   const [focused, setFocused] = useState(false)
 
   const commit = () => {
     const n = parseDecimal(text)
-    const next = Number.isNaN(n) ? value : snapQty(n, min)
+    const next = Number.isNaN(n) ? value : snap(n)
     if (next !== value) onChange(next)
   }
 
@@ -30,7 +34,7 @@ export function Stepper({ value, onChange, label, min = QTY_STEP, size = 'md' }:
         type="button"
         aria-label={`Decrease ${label}`}
         disabled={value <= min}
-        onClick={() => onChange(Math.max(min, value - QTY_STEP))}
+        onClick={() => onChange(snap(value - step))}
         className={`${btn} rounded-xl border border-line bg-surface leading-none disabled:opacity-30 active:bg-line`}
       >
         −
@@ -57,8 +61,9 @@ export function Stepper({ value, onChange, label, min = QTY_STEP, size = 'md' }:
       <button
         type="button"
         aria-label={`Increase ${label}`}
-        onClick={() => onChange(value + QTY_STEP)}
-        className={`${btn} rounded-xl border border-line bg-surface leading-none active:bg-line`}
+        disabled={value >= max}
+        onClick={() => onChange(snap(value + step))}
+        className={`${btn} rounded-xl border border-line bg-surface leading-none disabled:opacity-30 active:bg-line`}
       >
         +
       </button>

@@ -30,6 +30,7 @@ A single-user fitness PWA for Ayan (Android, Chrome). It covers calorie and macr
 - **No progression suggestions.** Show last session's numbers only; the user decides.
 - **Quantities:** every food entry uses a 0.5-step stepper, can switch between multiple units, and stays editable after saving.
 - **Logging is manual first.** Never require a menu import or photo; the app must be fully usable by searching and adding dishes by hand.
+- **Never assume what the user will eat.** Summaries (e.g. the Today dinner card) use logged entries only and stay hidden until something is logged. An imported menu may only reorder suggestions; it never stands in for a meal.
 - **Mess dish macros** come from `data/archetypes.json`; each dish in `data/mess-dishes.json` points to one via `archetypeId`. A dish `override` beats its archetype, and a user edit beats both. Match menu imports on `name` + `aliases`, case-insensitive. `altUnits[].factor` scales the default portion (e.g. ladle = 0.5 katori).
 - **Volume counting:** fractional sets, where a direct set counts as 1 and a set for a helper muscle counts as 0.5.
 - **Deloads:** every 6 completed training weeks, at half the planned sets, with a Skip button.

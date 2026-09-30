@@ -219,29 +219,3 @@ export function slugify(name: string, taken: ReadonlySet<string>): string {
   while (taken.has(`${base}-${n}`)) n++
   return `${base}-${n}`
 }
-
-export interface DinnerDish {
-  name: string
-  /** Protein for one default portion. */
-  protein: number
-  nonVeg: boolean
-}
-
-export interface TonightPlan {
-  main: DinnerDish
-  isVeg: boolean
-}
-
-/** The dinner dish with the most protein is tonight's main; the night is veg unless any dish is non-veg. */
-export function planTonight(dinner: readonly DinnerDish[]): TonightPlan | null {
-  if (dinner.length === 0) return null
-  const nonVeg = dinner.filter((d) => d.nonVeg)
-  const pool = nonVeg.length > 0 ? nonVeg : dinner
-  const main = pool.reduce((best, d) => (d.protein > best.protein ? d : best))
-  return { main, isVeg: nonVeg.length === 0 }
-}
-
-/** Protein to get from other meals so that dinner's main can close the gap. */
-export function proteinBeforeDinner(target: number, consumedOutsideDinner: number, mainProtein: number): number {
-  return Math.max(0, Math.round(target - consumedOutsideDinner - mainProtein))
-}

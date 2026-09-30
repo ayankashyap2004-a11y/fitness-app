@@ -1,0 +1,68 @@
+[
+  {
+    "dayIndex": 0,
+    "name": "Push",
+    "focus": "Chest, shoulders, triceps",
+    "exercises": [
+      { "key": "push-1", "gymId": "barbell-bench-press", "homeId": "db-floor-press", "homeNote": "or deficit push-ups", "sets": 3, "repRange": [6, 8], "rir": "1–2", "restSec": 180 },
+      { "key": "push-2", "gymId": "incline-db-press", "homeId": "feet-elevated-push-up", "sets": 3, "repRange": [8, 10], "rir": "1–2", "restSec": 150 },
+      { "key": "push-3", "gymId": "seated-db-shoulder-press", "homeId": "standing-db-shoulder-press", "sets": 3, "repRange": [8, 10], "rir": "1–2", "restSec": 120 },
+      { "key": "push-4", "gymId": "cable-lateral-raise", "homeId": "db-lateral-raise", "gymNote": "or DB lateral raise", "sets": 4, "repRange": [10, 15], "rir": "0–1", "restSec": 90 },
+      { "key": "push-5", "gymId": "overhead-cable-triceps-extension", "homeId": "db-overhead-triceps-extension", "sets": 3, "repRange": [10, 12], "rir": "0–1", "restSec": 90 },
+      { "key": "push-6", "gymId": "cable-fly", "homeId": "db-floor-fly", "homeNote": "or band fly", "sets": 2, "repRange": [12, 15], "rir": "0–1", "restSec": 90 }
+    ]
+  },
+  {
+    "dayIndex": 1,
+    "name": "Pull",
+    "focus": "Back, biceps, rear delts",
+    "exercises": [
+      { "key": "pull-1", "gymId": "lat-pulldown", "homeId": "pull-up", "gymNote": "or pull-ups", "homeNote": "or band pulldown", "sets": 3, "repRange": [6, 10], "rir": "1–2", "restSec": 150 },
+      { "key": "pull-2", "gymId": "chest-supported-row", "homeId": "one-arm-db-row", "sets": 3, "repRange": [8, 10], "rir": "1–2", "restSec": 120 },
+      { "key": "pull-3", "gymId": "seated-cable-row", "homeId": "band-row", "sets": 2, "repRange": [10, 12], "rir": "1", "restSec": 120 },
+      { "key": "pull-4", "gymId": "reverse-pec-deck", "homeId": "db-rear-delt-fly", "gymNote": "or face pull", "sets": 3, "repRange": [12, 15], "rir": "0–1", "restSec": 90 },
+      { "key": "pull-5", "gymId": "incline-db-curl", "homeId": "incline-db-curl", "homeNote": "or DB curl with arms behind torso", "sets": 3, "repRange": [10, 12], "rir": "0–1", "restSec": 90 },
+      { "key": "pull-6", "gymId": "db-hammer-curl", "homeId": "db-hammer-curl", "sets": 2, "repRange": [10, 12], "rir": "0–1", "restSec": 90 }
+    ]
+  },
+  {
+    "dayIndex": 2,
+    "name": "Legs",
+    "focus": "Quad focus",
+    "exercises": [
+      { "key": "legs-1", "gymId": "back-squat", "homeId": "goblet-squat", "homeNote": "or DB front squat", "sets": 3, "repRange": [6, 8], "rir": "2–3", "restSec": 180 },
+      { "key": "legs-2", "gymId": "romanian-deadlift", "homeId": "db-romanian-deadlift", "sets": 3, "repRange": [8, 10], "rir": "2", "restSec": 150 },
+      { "key": "legs-3", "gymId": "leg-press", "homeId": "heel-elevated-goblet-squat", "sets": 3, "repRange": [10, 12], "rir": "1", "restSec": 120 },
+      { "key": "legs-4", "gymId": "seated-leg-curl", "homeId": "slider-leg-curl", "sets": 3, "repRange": [10, 12], "rir": "0–1", "restSec": 90 },
+      { "key": "legs-5", "gymId": "leg-extension", "homeId": "sissy-squat", "homeNote": "or band Spanish squat", "sets": 2, "repRange": [12, 15], "rir": "0–1", "restSec": 90 },
+      { "key": "legs-6", "gymId": "standing-calf-raise", "homeId": "single-leg-db-calf-raise", "sets": 4, "repRange": [10, 15], "rir": "0–1", "restSec": 90 }
+    ]
+  },
+  {
+    "dayIndex": 3,
+    "name": "Upper",
+    "focus": "Mixed",
+    "exercises": [
+      { "key": "upper-1", "gymId": "incline-barbell-press", "homeId": "incline-db-press", "homeNote": "or feet-elevated push-ups", "sets": 3, "repRange": [6, 8], "rir": "1–2", "restSec": 180 },
+      { "key": "upper-2", "gymId": "neutral-grip-pull-up", "homeId": "pull-up", "gymNote": "or pulldown", "homeNote": "or band pulldown", "sets": 3, "repRange": [6, 10], "rir": "1–2", "restSec": 150 },
+      { "key": "upper-3", "gymId": "one-arm-cable-row", "homeId": "one-arm-db-row", "gymNote": "or DB row", "sets": 3, "repRange": [8, 10], "rir": "1–2", "restSec": 120 },
+      { "key": "upper-4", "gymId": "machine-chest-press", "homeId": "chair-dip", "gymNote": "or dips", "homeNote": "or push-ups", "sets": 2, "repRange": [8, 12], "rir": "1", "restSec": 120 },
+      { "key": "upper-5", "gymId": "db-lateral-raise", "homeId": "db-lateral-raise", "sets": 4, "repRange": [12, 15], "rir": "0–1", "restSec": 90 },
+      { "key": "upper-6", "gymId": "overhead-cable-triceps-extension", "homeId": "db-overhead-triceps-extension", "sets": 2, "repRange": [10, 12], "rir": "0–1", "restSec": 90, "superset": "upper-arms" },
+      { "key": "upper-7", "gymId": "incline-db-curl", "homeId": "incline-db-curl", "sets": 2, "repRange": [10, 12], "rir": "0–1", "restSec": 90, "superset": "upper-arms" }
+    ]
+  },
+  {
+    "dayIndex": 4,
+    "name": "Lower",
+    "focus": "Hamstring and glute focus",
+    "exercises": [
+      { "key": "lower-1", "gymId": "deadlift", "homeId": "db-romanian-deadlift", "homeNote": "heavy", "sets": 3, "repRange": [4, 6], "rir": "2–3", "restSec": 180 },
+      { "key": "lower-2", "gymId": "hip-thrust", "homeId": "db-hip-thrust", "homeNote": "or single-leg", "sets": 3, "repRange": [8, 10], "rir": "1", "restSec": 120 },
+      { "key": "lower-3", "gymId": "db-bulgarian-split-squat", "homeId": "db-bulgarian-split-squat", "sets": 3, "repRange": [8, 10], "rir": "1–2", "restSec": 120 },
+      { "key": "lower-4", "gymId": "seated-leg-curl", "homeId": "slider-leg-curl", "sets": 3, "repRange": [10, 12], "rir": "0–1", "restSec": 90 },
+      { "key": "lower-5", "gymId": "seated-calf-raise", "homeId": "bent-knee-db-calf-raise", "sets": 3, "repRange": [12, 15], "rir": "0–1", "restSec": 90 },
+      { "key": "lower-6", "gymId": "hanging-leg-raise", "homeId": "lying-leg-raise", "sets": 3, "repRange": [10, 15], "rir": "0–1", "restSec": 60 }
+    ]
+  }
+]

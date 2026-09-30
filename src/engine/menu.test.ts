@@ -7,8 +7,6 @@ import {
   normalizeName,
   parseMenu,
   parseMenuText,
-  planTonight,
-  proteinBeforeDinner,
   slugify,
   suggestDishes,
 } from './menu'
@@ -131,39 +129,5 @@ describe('slugify', () => {
   it('builds unique ids', () => {
     expect(slugify('Paneer Butter Masala!', new Set())).toBe('paneer-butter-masala')
     expect(slugify('Roti', new Set(['roti', 'roti-2']))).toBe('roti-3')
-  })
-})
-
-describe('planTonight', () => {
-  it('picks the non-veg dish on a non-veg night', () => {
-    const plan = planTonight([
-      { name: 'Paneer Paratha', protein: 9, nonVeg: false },
-      { name: 'Butter Chicken', protein: 18, nonVeg: true },
-      { name: 'Yellow Dal', protein: 7, nonVeg: false },
-    ])
-    expect(plan).toEqual({ main: { name: 'Butter Chicken', protein: 18, nonVeg: true }, isVeg: false })
-  })
-
-  it('picks the highest-protein dish on a veg night', () => {
-    const plan = planTonight([
-      { name: 'Yellow Dal', protein: 7, nonVeg: false },
-      { name: 'Paneer Bhurji', protein: 15, nonVeg: false },
-    ])
-    expect(plan?.main.name).toBe('Paneer Bhurji')
-    expect(plan?.isVeg).toBe(true)
-  })
-
-  it('returns null without a dinner menu', () => {
-    expect(planTonight([])).toBeNull()
-  })
-})
-
-describe('proteinBeforeDinner', () => {
-  it('is target minus eaten minus the main', () => {
-    expect(proteinBeforeDinner(150, 60, 18)).toBe(72)
-  })
-
-  it('never goes negative', () => {
-    expect(proteinBeforeDinner(150, 140, 18)).toBe(0)
   })
 })

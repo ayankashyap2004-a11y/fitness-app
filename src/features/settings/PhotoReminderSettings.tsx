@@ -1,30 +1,37 @@
-import { useState } from 'react'
-import { useAppMeta } from '../../db/hooks'
+import { useEffect, useState } from 'react'
+import { useAppMeta, useToday } from '../../db/hooks'
 import { setPhotoReminder } from '../../db/photos'
 import { db } from '../../db/schema'
-
-const permissionNow = () => (typeof Notification === 'undefined' ? 'unsupported' : Notification.permission)
+import { isNative } from '../../platform'
+import { notificationPermission, requestNotificationPermission, syncPhotoReminder, type NotifyPermission } from '../progress/photoReminder'
 
 export function PhotoReminderSettings() {
   const meta = useAppMeta()
-  const [permission, setPermission] = useState<string>(permissionNow)
+  const today = useToday()
+  const [permission, setPermission] = useState<NotifyPermission>('prompt')
+
+  useEffect(() => {
+    void notificationPermission().then(setPermission)
+  }, [])
+
   if (!meta) return null
   const on = !!meta.photoReminder
 
   const toggle = async () => {
     const next = !on
     await setPhotoReminder(db, next)
-    if (next && typeof Notification !== 'undefined' && Notification.permission === 'default') {
-      setPermission(await Notification.requestPermission())
-    }
+    if (next && permission === 'prompt') setPermission(await requestNotificationPermission())
+    await syncPhotoReminder(db, today)
   }
 
   const note = !on
     ? 'Off'
     : permission === 'granted'
-      ? 'Banner on Today, plus a notification when you open the app on photo day.'
+      ? isNative
+        ? 'Banner on Today, plus a notification at 9:00 on photo day, even when the app is closed.'
+        : 'Banner on Today, plus a notification when you open the app on photo day.'
       : permission === 'denied'
-        ? 'Banner on Today. Notifications are blocked for this app in Chrome settings.'
+        ? 'Banner on Today. Notifications are blocked for this app in your phone settings.'
         : 'Banner on Today.'
 
   return (

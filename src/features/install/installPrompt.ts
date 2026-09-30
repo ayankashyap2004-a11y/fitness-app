@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react'
+import { isNative } from '../../platform'
 
 /** Chrome's `beforeinstallprompt` event (not in the standard DOM typings). */
 interface InstallPromptEvent extends Event {
@@ -35,7 +36,8 @@ export function isStandalone(): boolean {
 type InstallState = 'installed' | 'ready' | 'manual'
 
 function snapshot(): InstallState {
-  if (installedNow || isStandalone()) return 'installed'
+  // The APK is already an installed app.
+  if (isNative || installedNow || isStandalone()) return 'installed'
   return deferred ? 'ready' : 'manual'
 }
 

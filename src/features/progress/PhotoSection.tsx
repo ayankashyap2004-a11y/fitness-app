@@ -8,6 +8,7 @@ import type { ProgressPhoto } from '../../db/types'
 import { PHOTO_ANGLES, groupByDate, type PhotoAngle } from '../../engine/photos'
 import { compressPhoto } from './compressPhoto'
 import { PhotoImage } from './PhotoImage'
+import { syncPhotoReminder } from './photoReminder'
 
 const ANGLE_LABELS: Record<PhotoAngle, string> = { front: 'Front', side: 'Side', back: 'Back' }
 
@@ -33,6 +34,7 @@ export function PhotoSection() {
     setError(null)
     try {
       await savePhoto(db, today, angle, await compressPhoto(file))
+      await syncPhotoReminder(db, today)
     } catch {
       setError("Couldn't read that image. Try another photo.")
     } finally {
@@ -123,6 +125,7 @@ export function PhotoSection() {
               onClick={async () => {
                 await deletePhoto(db, viewing.id!)
                 setViewing(null)
+                await syncPhotoReminder(db, today)
               }}
             >
               Delete photo

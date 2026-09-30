@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
+import { pushBackHandler } from './backStack'
 
 interface Props {
   title: string
@@ -21,9 +22,12 @@ export function BottomSheet({ title, onClose, children, footer }: Props) {
       if (e.key === 'Escape') close.current()
     }
     window.addEventListener('keydown', onKey)
+    // Android Back (APK) closes the sheet instead of leaving the app.
+    const popBack = pushBackHandler(() => close.current())
     return () => {
       document.body.style.overflow = prev
       window.removeEventListener('keydown', onKey)
+      popBack()
     }
   }, [])
 

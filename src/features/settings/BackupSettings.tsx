@@ -4,7 +4,7 @@ import { exportBackup, readBackup, restoreBackup, type ParsedBackup } from '../.
 import { useAppMeta } from '../../db/hooks'
 import { db } from '../../db/schema'
 import { describeCounts } from '../../engine/backup'
-import { canShareFiles, downloadBytes, shareBytes } from './saveFile'
+import { canShareFiles, saveBytes, shareBytes } from './saveFile'
 
 const fmt = (iso: string) => new Date(`${iso.slice(0, 10)}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
 
@@ -27,8 +27,8 @@ export function BackupSettings() {
       const kb = Math.max(1, Math.round(bytes.length / 1024))
       if (how === 'share' && (await shareBytes(bytes, fileName))) setStatus({ kind: 'done', text: `Shared ${fileName} (${kb} KB).` })
       else {
-        downloadBytes(bytes, fileName)
-        setStatus({ kind: 'done', text: `Saved ${fileName} (${kb} KB) to Downloads.` })
+        const where = await saveBytes(bytes, fileName)
+        setStatus({ kind: 'done', text: where === 'Downloads' ? `Saved ${fileName} (${kb} KB) to Downloads.` : `Saved to ${where} (${kb} KB).` })
       }
     } catch {
       setStatus({ kind: 'error', text: 'Backup failed. Please try again.' })

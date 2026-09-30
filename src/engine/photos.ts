@@ -40,3 +40,33 @@ export function photoReminderDue(enabled: boolean, lastPhotoDate: string | undef
   }
   return d(today) - d(lastPhotoDate) >= everyDays
 }
+
+export const REMINDER_HOUR = 9
+
+/**
+ * When to schedule the next photo-reminder notification (APK, where notifications can fire
+ * while the app is closed): 9:00 on the day it falls due; if that's already passed, soon
+ * (unless one was shown today), else 9:00 tomorrow. Null when reminders are off.
+ */
+export function nextReminderAt(
+  enabled: boolean,
+  lastPhotoDate: string | undefined,
+  now: Date,
+  notifiedOn: string | undefined,
+  everyDays = 7,
+): { at: Date; immediate: boolean } | null {
+  if (!enabled) return null
+  const at9 = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate(), REMINDER_HOUR, 0, 0, 0)
+  const todayIso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
+  let due: Date
+  if (lastPhotoDate) {
+    const [y, m, d] = lastPhotoDate.split('-').map(Number)
+    due = at9(new Date(y!, m! - 1, d! + everyDays))
+  } else {
+    due = at9(now)
+  }
+  if (due > now) return { at: due, immediate: false }
+  if (notifiedOn !== todayIso) return { at: new Date(now.getTime() + 5_000), immediate: true }
+  const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1)
+  return { at: at9(tomorrow), immediate: false }
+}

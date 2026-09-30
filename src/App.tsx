@@ -1,4 +1,7 @@
-import { lazy, Suspense, useState, type ComponentType } from 'react'
+import { App as CapApp } from '@capacitor/app'
+import { lazy, Suspense, useEffect, useRef, useState, type ComponentType } from 'react'
+import { handleBack } from './components/backStack'
+import { isNative } from './platform'
 import { BottomTabBar, TABS, type TabId } from './components/BottomTabBar'
 import { TodayScreen } from './features/today/TodayScreen'
 import { FoodScreen } from './features/food/FoodScreen'
@@ -45,6 +48,22 @@ export default function App() {
       // ignore
     }
   }
+
+  // Android Back (APK only): close the top sheet, else go to Today, else minimise.
+  const tabRef = useRef(tab)
+  tabRef.current = tab
+  useEffect(() => {
+    if (!isNative) return
+    const sub = CapApp.addListener('backButton', () => {
+      if (handleBack()) return
+      if (tabRef.current !== 'today') changeTab('today')
+      else void CapApp.minimizeApp()
+    })
+    return () => {
+      void sub.then((s) => s.remove())
+    }
+    // changeTab only touches state setters and localStorage.
+  }, [])
 
   const profile = useProfile()
   if (profile === undefined) return null

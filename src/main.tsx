@@ -8,14 +8,16 @@ import { db } from './db/schema'
 import { ensureAppMeta } from './db/persist'
 import { seedLibrary } from './db/seed'
 import { toISODate } from './engine/dates'
-import { notifyPhotoReminderIfDue } from './features/progress/photoReminder'
+import { syncPhotoReminder } from './features/progress/photoReminder'
+import { isNative } from './platform'
 import './index.css'
 
-registerSW({ immediate: true })
+// The APK bundles every file already; the service worker is only for the web version.
+if (!isNative) registerSW({ immediate: true })
 
 ensureAppMeta(db)
   .then(() => seedLibrary(db))
-  .then(() => notifyPhotoReminderIfDue(db, toISODate(new Date())))
+  .then(() => syncPhotoReminder(db, toISODate(new Date())))
   .catch((err: unknown) => console.error('Storage setup failed', err))
 
 createRoot(document.getElementById('root')!).render(
